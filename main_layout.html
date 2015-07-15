@@ -722,13 +722,13 @@ var main_area_height = window_height - other_height;
 var main = main_area_height + 65;
 var search_area_height = main_area_height - 72;
 if(main_area_height > 200){
-    $('#main-right-menu').css('max-height',main_area_height+'px');
+    //$('#main-right-menu').css('max-height',main_area_height+'px');
     $('#main-content-container').css('max-height',main_area_height+'px');
     $('.aui-page-panel-inner').css('max-height',search_area_height+'px');
 
     $('#main').css('height',main+'px');
 } else {
-    $('#main-right-menu').css('height','200px');
+    //$('#main-right-menu').css('height','200px');
     $('#main-content-container').css('height','200px');
 }
 
@@ -740,11 +740,11 @@ var other_height = offset_top + footer_height+10;
 var main_area_height = window_height - other_height;
 var main = main_area_height + 65;
 if(main_area_height > 200){
-    $('#main-right-menu').css('height',main_area_height+'px');
+    //$('#main-right-menu').css('height',main_area_height+'px');
     $('#main-content-container').css('height',main_area_height+'px');
     $('#main').css('height',main+'px');
 } else {
-    $('#main-right-menu').css('height','200px');
+    //$('#main-right-menu').css('height','200px');
     $('#main-content-container').css('height','200px');
 }
            });
