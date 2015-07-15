@@ -1,0 +1,622 @@
+#navigation
+{
+margin-bottom: -15px;
+}
+#search-form h1
+{
+line-height: 0.6;
+max-width: 135px;
+}
+#footer
+{
+background-color: #303a49;
+}
+.wiki-content p
+{
+word-wrap: break-word !important;
+word-break: normal !important;
+}
+#accmenu > ul > li > a
+{
+font-size: 14px;
+}
+#accmenu ul ul a
+{
+font-size: 14px;
+}
+#status
+{
+margin-left: 70px !important;
+}
+.greyboxfilled
+{
+margin-left:0 !important;
+}
+.aui-header-primary
+{
+margin-left: 20px;
+}
+
+
+.edit
+{
+margin-left:3% !important;
+}
+
+#accmenu{
+width:98%;
+}
+.content
+{
+padding-top:10px;
+}
+.cell
+{
+max-width:940px;
+}
+
+pre {
+color: #5A7685;
+font-size: 16px;
+font-weight: 400;
+line-height: 1em;
+white-space: pre-wrap;       /* css-3 */
+white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+white-space: -pre-wrap;      /* Opera 4-6 */
+white-space: -o-pre-wrap;    /* Opera 7 */
+word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+.confluenceTable
+{
+color: #000;
+font-size: 16px;
+font-weight: 400;
+}
+.message-content
+{
+color: #5A7685;
+font-size: 16px;
+}
+
+.dpdwn ul{
+display: none;
+position: absolute;
+z-index: 100000;
+background-color: #fff;
+width: 150px;
+border: 1px solid #ccc;
+border-bottom-left-radius: 3px;
+border-bottom-right-radius: 3px;
+box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+.dpdwn:hover ul {
+display:block;
+margin:0;
+padding:0;
+
+}
+.dpdwn:hover ul li {
+display:inline;
+}
+.dpdwn ul li a
+{
+padding: 5px 10px;
+}
+.aui-nav
+{
+margin-left:20px !important;
+}
+#space-menu-link
+{
+display:none;
+}
+.aui-nav strong
+{
+color:#000;
+padding:10px;
+}
+#space-labels-list
+{
+display:none;
+}
+.aui-nav-heading
+{
+display:none;
+}
+#side-menu #menu-logo
+{
+height:80px !important;
+}
+h1
+{
+font-size: 28px !important;
+color: #000000 !important;
+letter-spacing: 1px !important;
+margin-top: 5px !important;
+}
+.nav > li:hover
+{
+background-color:#0171b9;
+color:#fff;
+}
+.nav > li.active
+{
+background-color:#0171b9;
+color:#fff;
+}
+#header .aui-header .aui-button.aui-button-primary.aui-style:hover, .aui-header .aui-button.aui-button-primary.aui-style:focus{
+background-color:#0171b9 !important;
+padding-top: 9px;
+padding-bottom: 32px;
+}
+.wiki-content a, .wiki-content a:link
+{
+color:#296ebb !important;
+}
+.wiki-content h2
+{
+font-weight:bold;
+font-size:18px !important;
+}
+.wiki-content h3
+{
+font-size:20px !important;
+font-weight:normal !important;
+color:#0171b9 !important;
+}
+.wiki-content h4
+{
+font-size:16px !important;
+color:#0171b9 !important;
+font-weight:bold !important;
+}
+.wiki-content h5
+{
+font-size:16px !important;
+font-weight:bold !important;
+color:#0171b9 !important;
+}
+.wiki-content h6
+{
+font-size:16px !important;
+font-weight:normal !important;
+color:#0171b9 !important;
+}
+#header .aui-header a:hover
+{
+background-color:#0171b9 !important;
+}
+.aui-dropdown2.aui-style-default a.active
+{
+background-color:#0171b9 !important;
+}
+.aui-header .aui-dropdown2-trigger:hover, .aui-header .aui-dropdown2-trigger.active, #header .aui-header .aui-nav-link.active, #header .aui-header .aui-nav-imagelink.active, #header .aui-header .aui-nav-imagelink:focus, #header .aui-header .aui-nav-imagelink:hover, #header .aui-header a:focus, #header .aui-header a:hover, #header .aui-header a:active
+{
+background-color:#0171b9 !important;
+}
+.wiki-content a, .wiki-content a:link
+{
+color: #0171b9 !important;
+}
+.nav li li:hover a {
+color: #FF8100 !important;
+}
+.nav li li a:hover
+{
+color:#FF8100;
+}
+.nav li ul li a.active
+{
+color: #FF8100 !important;
+}
+#accmenu > ul > li >a.active {
+color:#FF8100;
+}
+#accmenu > ul > li > ul > li > a.active
+{
+color:#FF8100;
+}
+#accmenu > ul > li > ul > li > ul > li >a.active
+{
+color:#FF8100;
+}
+.wiki-content a:hover
+{
+color: #FF8100 !important;
+text-decoration:underline;
+}
+p
+{
+color: #000 !important;
+}
+#accmenu > ul > li
+{
+color:#000;
+}
+#accmenu > ul > li > a
+{
+color:#000;
+}
+#accmenu > ul > li > ul > li > a
+{
+color:#000;
+}
+#accmenu > ul > li > ul > li > ul > li > a
+{
+color:#000;
+}
+#accmenu > ul > li.active > a
+{
+color:#000;
+}
+#accmenu > ul > li > a:hover
+{
+color:#FF8100;
+}
+#accmenu > ul > li > ul > li > a:hover
+{
+color:#FF8100;
+}
+#accmenu > ul > li > ul > li > ul > li > a:hover
+{
+color:#FF8100;
+}
+.content
+{
+color:#000 Important;
+}
+.wiki-content ul
+{
+color:#000;
+}
+.wiki-content ol
+{
+color:#000;
+}
+.wysiwyg-macro-body p
+{
+color:#000 Important;
+}
+.mceContentBody ul
+{
+color:#000 Important;
+}
+.mceContentBody ol
+{
+color:#000 Important;
+}
+ul.toc-indentation li a
+{
+color:#0171b9 Important;
+}
+blockquote
+{
+color:#000 !important;
+}
+.blank-experience-container p
+{
+color:#000 !important;
+}
+.nav > li > a {
+display: block;
+color:#000;
+}
+.nav li li a
+{
+color:#000 !important;
+width:200px;
+}
+ul.toc-indentation li a
+{
+color: #0171b9 !important;
+}
+span.has-sub:after
+{
+border-left: 5px solid #000;
+}
+span.has-sub.active:after
+{
+border-top: 5px solid #000;
+}
+#accmenu > ul > li > ul > li
+{
+color:#000;
+}
+#accmenu > ul > li > ul > li.active > a
+{
+color:#000;
+}
+#accmenu > ul > li > ul > li > ul > li
+{
+color:#000;
+}
+.update-item-meta
+{
+color:#000 !important;
+}
+pre
+{
+color:#000;
+}
+.update-item-details
+{
+color:#000 !important;
+}
+.nowrap-top
+{
+white-space: normal !important;
+}
+.nav li ul
+{
+z-index:10;
+}
+
+
+
+/******** Update by DDR-01JUL15 : START ********/
+#right-main-container{
+width: 25%;
+float: left;
+margin: 0;
+padding: 0;
+max-width:320px;
+}
+#center-main-container{
+margin-top: -10px !important;
+width: 75%;
+float: left;
+margin: 0;
+padding: 0;
+}
+#main-right-menu,
+#main-right-menu ul,
+#main-right-menu ul li,
+#main-right-menu ul li a {
+margin: 0;
+padding: 0;
+border: 0;
+list-style: none;
+line-height: 1;
+display: block;
+position: relative;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+color: #000000;
+text-decoration: none;
+
+}
+#main-right-menu a{
+cursor: pointer;
+}
+#main-right-menu {
+
+border: 1px #A9A9A9 solid;
+font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+color: #000000;
+font-size: 16px;
+background-color: #F2F2F2;
+border-radius: 3px;
+max-height: 550px;
+overflow-y: auto;
+
+}
+#main-right-menu ul ul {
+display: none;
+background-color: #fff;
+}
+#main-right-menu >ul > li >a{
+border-top: 1px #D3D3D3 solid;
+padding: 16px;
+}
+#main-right-menu >ul:first-child > li>a{
+border-top:0px;
+}
+#main-right-menu >ul ul > li >a{
+font-size: 14px;
+padding: 10px 0px;
+margin-left: 30px;
+}
+#main-right-menu >ul ul > li .close-expand-icon{
+width:30px;
+height:20px;
+padding:0px;
+cursor:pointer;
+float: left;
+margin:0px;
+}
+#main-right-menu >ul ul > li li .close-expand-icon{
+padding-left: 16px;
+width: 42px;
+}
+#main-right-menu >ul ul > li span.has-sub:before{
+content: "+";
+position: absolute;
+line-height: 28px;
+left: 17px;
+font-size: 16px;
+}
+#main-right-menu >ul ul > li li span.has-sub:before{
+left: 34px;
+}
+#main-right-menu >ul ul > li span.has-sub.open:before{
+content: "-";
+position: absolute;
+line-height: 28px;
+left: 17px;
+font-size: 18px;
+}
+#main-right-menu >ul ul > li li span.has-sub.open:before{
+left: 34px;
+}
+#main-right-menu >ul ul ul > li >a{
+font-size: 14px;
+padding: 10px 0;
+margin-left: 48px;
+}
+#main-right-menu >ul ul ul > li li >a{
+margin-left: 64px;
+}
+#main-right-menu a.current{
+color: #EF8222;
+font-weight: bold;
+}
+
+
+#main-content-container{
+margin-left: 16px;
+min-height: 100px;
+border: 1px #A9A9A9 solid;
+font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+color: #000000;
+font-size: 13px;
+border-radius: 3px;
+max-height: 550px;
+overflow-y: auto;
+max-width:976px;
+}
+.innercell{
+width: 99% !important;
+}
+
+.theme-default .ia-splitter #footer{
+position: fixed;
+bottom: 0;
+}
+
+#main{
+min-height: 200px !important;
+}
+
+.aui-header .aui-quicksearch input{
+width:600px;
+}
+
+.aui-header .aui-dropdown2-trigger::after {
+border-top-color: #333;
+}
+
+.content-navigation .ajs-menu-bar{
+margin-top:-10px;
+}
+.ia-splitter {
+max-width:1400px !important;
+margin : auto !important;
+}
+
+#search-results-header{
+float: left;
+width: 68%;
+margin-left: 16px;
+margin-top: 0px;
+}
+.aui-page-panel-inner{
+width: 70%;
+margin-left: 0;
+padding-left: 16px;
+overflow-y: auto;
+display: block;
+}
+.aui-page-panel-inner .aui-page-panel-content{
+display: block;
+width: 37%;
+float: left;
+}
+.aui-page-panel-inner .aui-page-panel-sidebar{
+display: block;
+width: 30%;
+float: left;
+}
+.search-results-page-panel-nav{
+display: block;
+width: 33%;
+float: left;
+}
+/* Let's get this party started */
+::-webkit-scrollbar { width: 5px; }
+
+/* Track */
+::-webkit-scrollbar-track { -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0); -webkit-border-radius: 10px; border-radius: 10px; }
+
+/* Handle */
+::-webkit-scrollbar-thumb { -webkit-border-radius: 10px; border-radius: 10px; background: rgba(104,104,104,0.8); -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); }
+
+::-webkit-scrollbar-thumb:window-inactive { background: rgba(104,104,104,0.4); }
+
+/************ Updated by DDR - 01JUL15 : END ****************/
+
+
+@media (min-width: 992px) {
+#side-menu nav a {
+padding-top: 55px;
+height:80px;
+}
+
+.scroll-pane
+{
+position: absolute;
+overflow-y: scroll;
+width:217px;
+overflow-x:hidden;
+height:610px;
+}
+#side-menu nav a .menu-icon
+{
+top:19px !important;
+}
+#createpageform
+{
+margin-left: 3%;
+}
+.aui-toolbar2 .aui-toolbar2-secondary
+{
+right: 42px !important;
+}
+.aui-toolbar .toolbar-split.toolbar-split-right
+{
+margin-right: 33px;
+}
+table
+{
+color:#000;
+}
+#searchfield
+{
+margin-left: 6%;
+}
+table.aui.tableview td a
+{
+margin-left: 4%;
+}
+@media screen and (max-width:640px) {
+.scroll
+{
+float:none !important;
+}
+}
+.aui-page-panel
+{
+margin-left:70px !important;
+}
+#people-search
+{
+margin-right:10%;
+}
+#follow-container
+{
+margin-left:10px;
+}
+.rss
+{
+padding-left:10px;
+}
+@media only screen and (min-width:800px) and (max-width:1280px)
+{
+.scroll
+{
+float:left;
+}
+}
+
+
+
