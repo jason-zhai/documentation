@@ -501,119 +501,116 @@
 </script>
 #end
 <script type="text/javascript">
-   var ww = document.body.clientWidth;
 
-   jQuery(document).ready(function() {
+var ww = document.body.clientWidth;
 
-   $( ".search-results" ).append( "<a href='display/ABOUT/About+Home ' class='home-back-btn'>Back To Home</a>" );
+jQuery(document).ready(function() {
 
-   /* First Level Active Menu Open*/
-   //Active parent menu down arrow
-   $(".current-level1").parent().parent().parent().find(".has-sub").addClass("active");
-   $(".current-level1").parent().parent().css("display","block");
+    $( ".search-results" ).append( "<a href='display/ABOUT/About+Home ' class='home-back-btn'>Back To Home</a>" );
 
-   /* Second Level Active Menu Open*/
-   $(".current-level2").parent().parent().css("display","block");
-   $(".current-level2").parent().parent().parent().parent().css("display","block");
-   //Active parent menu down arrow
-   $(".current-level2").parent().parent().parent().parent().parent().find(".has-sub").addClass("active");
+    /* First Level Active Menu Open*/
+    //Active parent menu down arrow
+    $(".current-level1").parent().parent().parent().find(".has-sub").addClass("active");
+    $(".current-level1").parent().parent().css("display","block");
+
+    /* Second Level Active Menu Open*/
+    $(".current-level2").parent().parent().css("display","block");
+    $(".current-level2").parent().parent().parent().parent().css("display","block");
+    //Active parent menu down arrow
+    $(".current-level2").parent().parent().parent().parent().parent().find(".has-sub").addClass("active");
 
     // is mobile device
-   if ($('header').width() > 480){
+    if ($('header').width() > 480){
 
-   var window_h = $(window).height();
-   var document_h = $(document).height();
-   var topbar_h = $("#header").height();
-   var menu_h = $("#main-header").height();
-   var top_h = (topbar_h + menu_h)+50;
-   var left_height = document_h - top_h;
-   var leftmenu_height = window_h - top_h;
-
-
-   $("#accmenu").css("height",left_height);
+        var window_h = $(window).height();
+        var document_h = $(document).height();
+        var topbar_h = $("#header").height();
+        var menu_h = $("#main-header").height();
+        var top_h = (topbar_h + menu_h)+50;
+        var left_height = document_h - top_h;
+        var leftmenu_height = window_h - top_h;
 
 
-   var widow_width = $(window).width();
-   var left_menu_width = $(".scroll").width();
-   var left_width = left_menu_width + 130;
-   var right_width = (widow_width - left_width);
-   $(".innercell").css("width",right_width);
+        $("#accmenu").css("height",left_height);
+
+
+        var widow_width = $(window).width();
+        var left_menu_width = $(".scroll").width();
+        var left_width = left_menu_width + 130;
+        var right_width = (widow_width - left_width);
+        $(".innercell").css("width",right_width);
 
     }
 
 
-   $( window ).resize(function() {
+    $( window ).resize(function() {
         var window_h = $(window).height();
         var pan_height = window_h - 20;
         $(".scroll-pane").css("height",pan_height);
-   var widow_width = $(window).width();
-   var left_menu_width = $(".scroll").width();
-   var left_width = left_menu_width + 130;
-   var right_width = (widow_width - left_width);
-   $(".innercell").css("width",right_width);
-   });
-   $( ".scroll" ).resize(function() {
-   var widow_width = $(window).width();
-   var left_menu_width = $(".scroll").width();
-   var left_width = left_menu_width + 130;
-   var right_width = (widow_width - left_width);
-   $(".innercell").css("width",right_width);
-   });
-       jQuery(".nav li.has-sub").mouseover(function() {
-           jQuery(this).addClass("down-arrow");
-       });
-       jQuery(".nav li.has-sub").mouseout(function() {
-           jQuery(this).removeClass("down-arrow");
-       });
-   	jQuery(".nav li a").each(function() {
-   		if (jQuery(this).next().length > 0) {
-   			jQuery(this).addClass("parent");
-   		};
-   	})  #if($!sitemeshPage.getProperty("page.pageId") == $scp.getContentId().asLong())
-                                                <li><a href=$scp.getUrlPath() class="active current-level2"><span>$scp.getTitle() </span></a>
-                                                   #else
-                                                <li><a href=$scp.getUrlPath()><span>$scp.getTitle() </span></a></li>
-                                                #end
+        var widow_width = $(window).width();
+        var left_menu_width = $(".scroll").width();
+        var left_width = left_menu_width + 130;
+        var right_width = (widow_width - left_width);
+        $(".innercell").css("width",right_width);
+    });
+    $( ".scroll" ).resize(function() {
+        var widow_width = $(window).width();
+        var left_menu_width = $(".scroll").width();
+        var left_width = left_menu_width + 130;
+        var right_width = (widow_width - left_width);
+        $(".innercell").css("width",right_width);
+    });
+    jQuery(".nav li.has-sub").mouseover(function() {
+        jQuery(this).addClass("down-arrow");
+    });
+    jQuery(".nav li.has-sub").mouseout(function() {
+        jQuery(this).removeClass("down-arrow");
+    });
+    jQuery(".nav li a").each(function() {
+        if (jQuery(this).next().length > 0) {
+            jQuery(this).addClass("parent");
+        };
+    })
 
-   	jQuery(".toggleMenu").click(function(e) {
-   		e.preventDefault();
-   		jQuery(this).toggleClass("down-arrow");
-   		jQuery(".nav").toggle();
-   	});
-   	adjustMenu();
-   })
+    jQuery(".toggleMenu").click(function(e) {
+        e.preventDefault();
+        jQuery(this).toggleClass("down-arrow");
+        jQuery(".nav").toggle();
+    });
+    adjustMenu();
+});
 
-   jQuery(window).bind('resize orientationchange', function() {
-   	ww = document.body.clientWidth;
-   	adjustMenu();
-   });
+jQuery(window).bind('resize orientationchange', function() {
+    ww = document.body.clientWidth;
+    adjustMenu();
+});
 
-   var adjustMenu = function() {
-   	if (ww < 768) {
-   		jQuery(".toggleMenu").css("display", "inline-block");
-   		if (!jQuery(".toggleMenu").hasClass("down-arrow")) {
-   			jQuery(".nav").hide();
-   		} else {
-   			jQuery(".nav").show();
-   		}
-   		jQuery(".nav li").unbind('mouseenter mouseleave');
-   		jQuery(".nav li a.parent").unbind('click').bind('click', function(e) {
-   			// must be attached to anchor element to prevent bubbling
-   			e.preventDefault();
-   			jQuery(this).parent("li").toggleClass("hover");
-   		});
-   	}
-   	else if (ww >= 768) {
-   		jQuery(".toggleMenu").css("display", "none");
-   		jQuery(".nav").show();
-   		jQuery(".nav li").removeClass("hover");
-   		jQuery(".nav li a").unbind('click');
-   		jQuery(".nav li").unbind('mouseenter mouseleave').bind('mouseenter mouseleave', function() {
-   		 	// must be attached to li so that mouseleave is not triggered when hover over submenu
-   		 	jQuery(this).toggleClass('hover');
-   		});
-   	}
-   }
+var adjustMenu = function() {
+    if (ww < 768) {
+        jQuery(".toggleMenu").css("display", "inline-block");
+        if (!jQuery(".toggleMenu").hasClass("down-arrow")) {
+            jQuery(".nav").hide();
+        } else {
+            jQuery(".nav").show();
+        }
+        jQuery(".nav li").unbind('mouseenter mouseleave');
+        jQuery(".nav li a.parent").unbind('click').bind('click', function(e) {
+            // must be attached to anchor element to prevent bubbling
+            e.preventDefault();
+            jQuery(this).parent("li").toggleClass("hover");
+        });
+    }
+    else if (ww >= 768) {
+        jQuery(".toggleMenu").css("display", "none");
+        jQuery(".nav").show();
+        jQuery(".nav li").removeClass("hover");
+        jQuery(".nav li a").unbind('click');
+        jQuery(".nav li").unbind('mouseenter mouseleave').bind('mouseenter mouseleave', function() {
+            // must be attached to li so that mouseleave is not triggered when hover over submenu
+            jQuery(this).toggleClass('hover');
+        });
+    }
+}
 </script>
 <script type="text/javascript">
    ( function( jQuery ) {
@@ -749,6 +746,7 @@ if(main_area_height > 200){
 }
            });
 
+debugger;
 $("#main-right-menu .current").parent('li').parent('ul').parent('li').children('.has-sub').addClass('open');
 $("#main-right-menu .open").parent('li').parent('ul').css('display','block');
 $("#main-right-menu .current").parent('li').parent('ul').parent('li').parent('ul').parent('li').children('.has-sub').addClass('open');
