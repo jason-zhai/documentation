@@ -514,11 +514,6 @@ pre {
     height: 80px;
   }
 }
-@media (max-width: 992px) {
-  #main {
-    margin-left: 0 !important;
-  }
-}
 .scroll-pane {
   position: absolute;
   overflow-y: scroll;
@@ -585,5 +580,23 @@ table.aui.tableview td a {
     max-width: 1024px !important;
   }
 }
-
+@media (max-width:1024px) {
+  #center-main-container {
+    width: 636px;
+  }
+  #main-right-menu {
+    width: 260px;
+  }
+  #main {
+    width: 944px;
+  }
+  .ia-splitter {
+    width: 1024px !important;
+  }
+}
+@media (max-width:992px) {
+  #main {
+    margin-left: 20px !important;
+  }
+}
 /* End custom styles for Confluence */
