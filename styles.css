@@ -295,15 +295,13 @@ pre {
 /******** Update by DDR-01JUL15 : START ********/
 
 #right-main-container {
-  width: 25%;
   float: left;
   margin: 0;
   padding: 0;
-  max-width: 320px;
 }
 #center-main-container {
   margin-top: -10px !important;
-  width: 75%;
+  max-width: 852px;
   float: right;
   margin: 0;
   padding: 0;
@@ -336,7 +334,7 @@ pre {
   position: fixed;
   bottom: 80px;
   top: 53px;
-  width: 320px;
+  width: 300px;
 }
 #main-right-menu ul ul {
   display: none;
@@ -402,7 +400,6 @@ pre {
   font-weight: bold;
 }
 #main-content-container {
-  margin-left: 16px;
   min-height: 100px;
   border: 1px #A9A9A9 solid;
   font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -431,7 +428,7 @@ pre {
 #main {
   min-height: 200px !important;
   background-color: #fff;
-  min-width: 1320px;
+  max-width: 1200px;
 }
 .aui-header .aui-quicksearch input {
   width: 300px;
@@ -443,7 +440,7 @@ pre {
   margin-top: -10px;
 }
 .ia-splitter {
-  max-width: 1400px !important;
+  max-width: 1280px !important;
   margin: auto !important;
 }
 #search-results-header {
@@ -570,6 +567,22 @@ table.aui.tableview td a {
 @media only screen and (min-width:800px) and (max-width:1280px) {
   .scroll {
     float: left;
+  }
+}
+@media (min-width:1024px) and (max-width:1280px) {
+  #center-main-container {
+    max-width: 636px;
+  }
+  #main-right-menu {
+    width: 260px;
+  }
+}
+@media (max-width:1280px) {
+  #main {
+    max-width: 944px;
+  }
+  .ia-splitter {
+    max-width: 1024px !important;
   }
 }
 
