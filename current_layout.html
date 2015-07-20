@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-60223453-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+    ## hassplisSpaceSideBar() indicates whether or not the theme supports rendering of the sidebar, not whether or not the
+    ## sidebar is present on the current page. Sidebar is only present when there is a valid spaceKey
+	#set($useNewSpaceIA = $theme.hasSpaceSideBar() && $spaceKey)
+    #if ($sitemeshPage.getProperty("page.spacename"))
+
+        #if ($sitemeshPage.getProperty("page.spacename").indexOf(".") > 0 )
+                    #set($index = $sitemeshPage.getProperty("page.spacename").indexOf(".")+1)
+                <title>$title - $sitemeshPage.getProperty("page.spacename").substring($index) - #siteTitle()</title>
+                  #else
+                      <title>$title - $sitemeshPage.getProperty("page.spacename") - #siteTitle()</title>
+                  #end
+
+    #else
+        <title>$title - #siteTitle()</title>
+    #end
+
+    #requireResource("confluence.web.resources:print-styles")
+
+    #requireResourcesForContext("main")
+    #requireResourcesForContext("atl.general")
+
+    #if ($useNewSpaceIA)
+        #requireResource("com.atlassian.confluence.plugins.confluence-space-ia:spacesidebar")
+    #end
+
+    #parse("/decorators/includes/header.vm")
+    $!settingsManager.globalSettings.customHtmlSettings.beforeHeadEnd
+
+    $!sitemeshPage.getProperty("page.canonical")
+<link href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700,400italic,700italic" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+</head>
+## HTML HEADER ENDS
+
+## HTML BODY BEGINS
+<body #onLoadAttr() id="com-atlassian-confluence" class="#if ($darkFeatures.isFeatureEnabled("lighter-editor-v1")) lighter-editor #end $!theme.bodyClass $!sitemeshPage.getProperty("page.bodyClass") aui-layout aui-theme-default mobile-side-menu-open">
+#parse ("/decorators/includes/main-content-includes.vm")
+<ul id="assistive-skip-links" class="assistive">
+    <li><a href="#title-heading">$action.getText("assistive.skiplink.to.content")</a></li>
+    <li><a href="\#breadcrumbs">$action.getText("assistive.skiplink.to.breadcrumbs")</a></li>
+    <li><a href="#header-menu-bar">$action.getText("assistive.skiplink.to.header.menu")</a></li>
+    <li><a href="#navigation">$action.getText("assistive.skiplink.to.action.menu")</a></li>
+    <li><a href="#quick-search-query">$action.getText("assistive.skiplink.to.quick.search")</a></li>
+</ul>
+<div id="page">
+#if((!$req.requestURL.toString().endsWith('editpage.actions')) && (!$req.requestURL.toString().endsWith('createpage.actions'))&& (!$req.requestURL.toString().endsWith('createpage-entervariables.action')))
+<!-- \#CliQr Global Side-Bar -->
+    <a id="mobile-hamburger" class="mobile-menu-toggle" href="#toggle-menu">
+  <div></div>
+  <div></div>
+  <div></div>
+</a>
+                         <div id="side-menu">
+  <div class="scroll-pane">
+    <a href="http://www.cliqr.com/" id="menu-logo" class="closed-menu-logo menu-link" target="_blank">
+      <span class="image"></span>
+    </a>
+    <nav>
+            <ul>
+
+                <li class="solutions-menu-li">
+          <a class="solutions-menu-item" href="http://www.cliqr.com/solutions/" target="_blank">
+            <span class="menu-icon solutions"></span>
+            <span class="menu-item-text">Solutions</span>
+          </a>
+        </li>
+                <li class="platform-menu-li">
+          <a class="platform-menu-item" href="http://www.cliqr.com/platform/" target="_blank">
+            <span class="menu-icon platform"></span>
+            <span class="menu-item-text">Platform</span>
+          </a>
+        </li>
+                <li class="company-menu-li">
+          <a class="company-menu-item" href="http://www.cliqr.com/company/" target="_blank">
+            <span class="menu-icon company"></span>
+            <span class="menu-item-text">Company</span>
+          </a>
+        </li>
+                <li class="partners-menu-li">
+          <a class="partners-menu-item" href="http://www.cliqr.com/partners/" target="_blank">
+            <span class="menu-icon partners"></span>
+            <span class="menu-item-text">Partners</span>
+          </a>
+        </li>
+                <li class="resources-menu-li">
+          <a class="resources-menu-item" href="http://www.cliqr.com/resources/" target="_blank">
+            <span class="menu-icon resources"></span>
+            <span class="menu-item-text">Resources</span>
+          </a>
+        </li>
+                   <li class="blog-menu-li">
+          <a class="blog-menu-item" href="http://www.cliqr.com/blog/" target="_blank">
+            <span class="menu-icon blog"></span>
+            <span class="menu-item-text">Blog</span>
+          </a>
+        </li>
+              <li class="careers-menu-li">
+          <a class="careers-menu-item" href="http://www.cliqr.com/careers/" target="_blank">
+            <span class="menu-icon careers"></span>
+            <span class="menu-item-text">Careers</span>
+          </a>
+        </li>
+        <li class="docs-menu-li">
+          <a class="active docs-menu-item" href="/display/HOME/Home">
+            <span class="menu-icon docs"></span>
+            <span class="menu-item-text">Docs</span>
+          </a>
+        </li>
+        </ul>
+    </nav>
+  </div>
+</div>
+<!-- \#CliQr Global Side-Bar -->
+#end
+<div id="full-height-container">
+    <div id="header-precursor">
+        <div class="cell">
+            $!settingsManager.globalSettings.customHtmlSettings.afterBodyStart
+                #displayGlobalMessages()
+        </div>
+    </div>
+    #parse("/decorators/includes/common-header.vm")
+
+    #if($sitemeshPage.getProperty("page.tree"))
+        #set($sidebarSettings = $studioSidebarHelper.getSettings($spaceKey))
+        <div id="splitter">
+        <div id="splitter-sidebar">
+
+        </div>
+        <div id="splitter-content">
+
+        ## script needs to be executed here to prevent jerky content
+        #includePluginJavascript("com.atlassian.confluence.plugins.doctheme:resources", "doc-theme.js")
+
+        #if ($!sitemeshPage.getProperty("page.theme-header"))
+            $!sitemeshPage.getProperty("page.theme-header")
+        #end
+    #elseif ($useNewSpaceIA && $sitemeshPage.getProperty("page.ia-sidebar"))
+
+
+    	<div class="ia-splitter">
+    		<div class="ia-splitter-left">
+    			<div class="ia-fixed-sidebar">
+    				<!-- \#Cliqr Menu -->
+                                  <a id="mobile-hamburger" class="mobile-menu-toggle" href="#toggle-menu">
+  <div></div>
+  <div></div>
+  <div></div>
+</a>
+                         <div id="side-menu">
+  <div class="scroll-pane">
+    <a href="http://www.cliqr.com/" id="menu-logo" class="closed-menu-logo menu-link" target="_blank">
+      <span class="image"></span>
+    </a>
+    <nav>
+            <ul>
+
+                <li class="solutions-menu-li">
+          <a class="solutions-menu-item" href="http://www.cliqr.com/solutions/" target="_blank">
+            <span class="menu-icon solutions"></span>
+            <span class="menu-item-text">Solutions</span>
+          </a>
+        </li>
+                <li class="platform-menu-li">
+          <a class="platform-menu-item" href="http://www.cliqr.com/platform/" target="_blank">
+            <span class="menu-icon platform"></span>
+            <span class="menu-item-text">Platform</span>
+          </a>
+        </li>
+                <li class="company-menu-li">
+          <a class="company-menu-item" href="http://www.cliqr.com/company/" target="_blank">
+            <span class="menu-icon company"></span>
+            <span class="menu-item-text">Company</span>
+          </a>
+        </li>
+                <li class="partners-menu-li">
+          <a class="partners-menu-item" href="http://www.cliqr.com/partners/" target="_blank">
+            <span class="menu-icon partners"></span>
+            <span class="menu-item-text">Partners</span>
+          </a>
+        </li>
+                <li class="resources-menu-li">
+          <a class="resources-menu-item" href="http://www.cliqr.com/resources/" target="_blank">
+            <span class="menu-icon resources"></span>
+            <span class="menu-item-text">Resources</span>
+          </a>
+        </li>
+  <li class="docs-menu-li">
+          <a class="active docs-menu-item" href="/display/ABOUT/About+Home" >
+            <span class="menu-icon docs"></span>
+            <span class="menu-item-text">Docs</span>
+          </a>
+        </li>
+              <li class="blog-menu-li">
+          <a class="blog-menu-item" href="http://www.cliqr.com/blog/" target="_blank">
+            <span class="menu-icon blog"></span>
+            <span class="menu-item-text">Blog</span>
+          </a>
+        </li>
+                <li class="careers-menu-li">
+          <a class="careers-menu-item" href="http://www.cliqr.com/careers/" target="_blank">
+            <span class="menu-icon careers"></span>
+            <span class="menu-item-text">Careers</span>
+          </a>
+        </li>
+
+              </ul>
+    </nav>
+  </div>
+</div>
+       <!-- \#Cliqr Menu -->
+    			</div>
+    		</div>
+    #end
+    <!-- \#header -->
+
+    ## CONTENT DIV BEGINS
+
+    #set ($showPersonalSidebar = ($sitemeshPage.getProperty("page.personal-sidebar") || $sitemeshPage.getProperty("page.show-personal-sidebar")))
+    #if($showPersonalSidebar && !$useNewSpaceIA)
+        #set ($personalClass = "has-personal-sidebar")
+    #elseif($sitemeshPage.getProperty("page.sidebar"))
+        #set ($personalClass = "has-sidebar")
+    #elseif($sitemeshPage.getProperty("page.blog-sidebar") && !$useNewSpaceIA)
+        #set ($personalClass = "has-blog-sidebar")
+    #end
+
+    #if ($sitemeshPage.getProperty("page.show-main-container") != "false")
+    <div id="main" class="$!personalClass aui-page-panel">
+        #if ($sitemeshPage.getProperty("page.show-main-header") != "false")
+        <div id="main-header">
+            $!sitemeshPage.getProperty("page.content-navigation")
+            $!sitemeshPage.getProperty("global.dashboard-navigation")
+            <div id="title-heading" class="pagetitle with-breadcrumbs">
+                #if ($sitemeshPage.getProperty("page.username"))
+                    #set ($tildeUsername = "~$username")
+                    #logoBlock($tildeUsername)
+                #end
+
+                #if (!$req.requestURL.toString().endsWith('dashboard.action'))
+                    <div id="breadcrumb-section">
+                        $!sitemeshPage.getProperty("page.breadcrumbs")
+                    </div>
+                #end
+
+                    $!sitemeshPage.getProperty("page.page-metadata-banner")
+                 <h1 id="title-text" class="with-breadcrumbs">
+                #if ($user)
+
+                #else
+
+                #end
+                </h1>
+            #if (!$req.requestURL.toString().endsWith('dashboard.action') )
+                    #set ( $spaceLabel = $page_title)
+
+                  <div class="menu-container">
+    <div class="menu-section">
+        <a class="toggleMenu" href="#">Menu</a>
+        <ul class="nav">
+
+             #foreach( $s in $spaceManager.getAllSpaces() )
+            #set($isAnonymous = false)
+          #checkAnonymousPermission($s)
+           #if($isAnonymous )
+             #if($!sitemeshPage.getProperty("page.spacekey") == $s.getKey())
+                  <li class="active has-sub">
+             #else
+                  <li class="has-sub">
+              #end
+
+               #if ($s.getName().indexOf(".") > 0 )
+                     #set($index = $s.getName().indexOf(".")+1)
+                    <a href=$s.getHomePage().getUrlPath()>$s.getName().substring($index) </a>
+               #else
+                      <a href=$s.getHomePage().getUrlPath()>$s.getName() </a>
+               #end
+
+                <ul>
+                 #foreach( $page in $s.getHomePage().getSortedChildren())
+                    #set($exists = false)
+                        #set($isExists = "#checkAncestors($pageManager.getPages($s,true) $page.getAncestors() $s)")
+
+                   #if($s.getHomePage().getContentId().asLong() != $page.getContentId().asLong())
+                       #if(!$exists)
+                            #if($!sitemeshPage.getProperty("page.pageId") == $page.getContentId().asLong())
+                              <li>
+                                  <a href=$page.getUrlPath() class="active">$page.getTitle()</a>
+                             </li>
+                          #else
+                           <li>
+                               <a href=$page.getUrlPath() >$page.getTitle()</a>
+                          </li>
+                        #end
+                    #end
+                #end
+
+   #end
+
+                 </ul>
+            </li>
+       #end
+          #end <!-- \#For loop ends -->
+
+    </div>
+</div>
+            </div>
+        </div><!-- \#main-header -->
+        #end
+ #end
+
+<!-- \#Macro check duplicates in Child -->
+ #set($exists = false)
+#macro(checkAncestors $pageList $ancestors $spaceKey)
+  #foreach($parent in $ancestors)
+     #if($parent != $spaceKey.getHomePage())
+        #foreach($page in $pageList)
+          #if($parent.getContentId().asLong() == $page.getContentId().asLong())
+             #set($exists = true)
+           #break
+          #end
+        #end
+     #end
+  #end
+#end
+<!-- \#Macro check duplicates in Child -->
+
+<!--\#Macro to restrict display of private spaces for non-logged in users -->
+  #set($isAnonymous = false)
+    #macro(checkAnonymousPermission $space)
+      #foreach ($permission in $space.getPermissions())
+          #if(($permission.getType()  == 'VIEWSPACE') && ($permission.isAnonymousPermission()) )
+              #set($isAnonymous = true)
+          #else
+              #if($user)
+                 #set($isAnonymous = true)
+             #end
+          #end
+          #end
+   #end
+
+        $!sitemeshPage.getProperty("page.tab-navigation")
+#if(($req.requestURL.toString().contains('/display/')) || ($req.requestURL.toString().endsWith('viewpage.action')))
+ <div id="sidebar-container">
+<div class="scroll">
+    #if($sitemeshPage.getProperty("page.spacekey"))
+    <div id="accmenu">
+    <ul>
+   #foreach( $s in $spaceManager.getAllSpaces() )
+
+   <!-- \#Macro checks, if no child then it will display parent page in Tree pane -->
+    #if($sitemeshPage.getProperty("page.pageId") == $s.getHomePage().getContentId().asLong())
+     #if($pageManager.getPages($s,false).size() == 1 )
+       #if ($s.getName().indexOf(".") > 0 )
+                     #set($index = $s.getName().indexOf(".")+1)
+                     <li><a href=$s.getHomePage().getUrlPath() class="active"><span>$s.getName().substring($index)</span></a>
+               #else
+                      <a href=$s.getHomePage().getUrlPath()>$s.getName() </a>
+               #end
+
+       #end
+     #end
+
+    #if($!sitemeshPage.getProperty("page.spacekey") == $s.getKey())
+      #foreach( $page in $s.getHomePage().getSortedChildren() )
+        #if($s.getHomePage().getContentId().asLong() != $page.getContentId().asLong())
+            #set($exists = false)
+           #set($isExists = "#checkAncestors($pageManager.getPages($s,true) $page.getAncestors() $s)")
+          #if(!$exists)
+         #if($!sitemeshPage.getProperty("page.pageId") == $page.getContentId().asLong())
+          <li><a href=$page.getUrlPath() class="active"><span>$page.getTitle() </span></a>
+         #else
+           <li><a href=$page.getUrlPath()><span> $page.getTitle()</span></a>
+        #end
+           #if($page.hasChildren())
+            <span class="has-sub"></span>
+            <ul>
+              #foreach( $cp in $page.getSortedChildren()  )
+               #if($!sitemeshPage.getProperty("page.pageId") == $cp.getContentId().asLong())
+                  <li><a href=$cp.getUrlPath() class="active current-level1"><span>$cp.getTitle() </span></a>
+               #else
+                  <li><a href=$cp.getUrlPath()><span>$cp.getTitle() </span></a>
+               #end
+                 #if($cp.hasChildren())
+                   <span class="has-sub" style="list-style:none !important;"></span>
+                    <ul>
+                      #foreach( $scp in $cp.getSortedChildren()  )
+                        #if($!sitemeshPage.getProperty("page.pageId") == $scp.getContentId().asLong())
+                           <li><a href=$scp.getUrlPath() class="active current-level2"><span>$scp.getTitle() </span></a>
+                        #else
+                           <li><a href=$scp.getUrlPath()><span>$scp.getTitle() </span></a></li>
+                        #end
+                      #end
+                    </ul>
+                 #end
+               </li>
+              #end
+        </ul>
+           #end
+         </li>
+        #end
+        #end
+      #end
+    #end
+   #end
+  </ul>
+</div>
+#end
+</div>
+</div>
+<!-- \#sidebar-container -->
+#end
+        $body
+
+    </div><!-- \#main -->
+    #else
+        $body
+    #end
+
+    ## CONTENT DIV ENDS
+
+    #if($sitemeshPage.getProperty("page.tree"))
+        $!sitemeshPage.getProperty("page.theme-footer")
+        </div>
+    </div>
+    #end
+
+#set ($footerContext = {'spaceKey': $!spaceKey})
+#webPanelForLocation("atl.footer" $footerContext)
+
+#if ($useNewSpaceIA && $sitemeshPage.getProperty("page.ia-sidebar"))
+</div>
+#end
+
+</div><!-- \#full-height-container -->
+</div><!-- \#page -->
+<li class="dpdwn" id="append_menu" style="display:none;">
+<a href="#"><span>Spaces</span></a>
+<ul><strong>Recent spaces</strong>
+#foreach( $s in $spaceManager.getAllSpaces() )
+              #if ($s.getName().indexOf(".") > 0 )
+                      #set($index = $s.getName().indexOf(".")+1)
+                        <li><a href="$s.getHomePage().getUrlPath()">$s.getName().substring($index) </a></li>
+                #else
+                      <a href=$s.getHomePage().getUrlPath()>$s.getName()  $permission.getType() </a>
+               #end
+#end
+<li><a style="border-top: 1px solid #CCC;" href="/spacedirectory/view.action?src=spacemenu">Space directory</a></li>
+<li><a href="/spaces/createspace-start.action?src=spacemenu">Create space</a></li></ul>
+</li>
+</body>
+</html>
+<script>
+jQuery( "#mobile-hamburger" ).toggle(
+  function() {
+     jQuery("#side-menu").addClass("side_menu");
+ jQuery(this).addClass("mobile_hamburger");
+  }, function() {
+    jQuery("#side-menu").removeClass("side_menu");
+ jQuery(this).removeClass("mobile_hamburger");
+  }
+);
+</script>
+<!-- \#Remove Tools Menu for not logged in users -->
+#if (!$user)
+     <script>
+          $(document).ready(function(){
+             $("#action-menu-modify").remove();
+$("#action-menu-primary").remove();
+$("#view-page-info-link").parent().remove();
+$("#link-to-page-link").parent().remove();
+$("#view-in-hierarchy-link").parent().remove();
+$("#action-view-source-link").parent().remove();
+$("#import-word-doc").parent().remove();
+          });
+     </script>
+#end
+<script type="text/javascript">
+
+var ww = document.body.clientWidth;
+
+jQuery(document).ready(function() {
+
+$( ".search-results" ).append( "<a href='display/ABOUT/About+Home ' class='home-back-btn'>Back To Home</a>" );
+
+/* First Level Active Menu Open*/
+//Active parent menu down arrow
+$(".current-level1").parent().parent().parent().find(".has-sub").addClass("active");
+$(".current-level1").parent().parent().css("display","block");
+
+/* Second Level Active Menu Open*/
+$(".current-level2").parent().parent().css("display","block");
+$(".current-level2").parent().parent().parent().parent().css("display","block");
+//Active parent menu down arrow
+$(".current-level2").parent().parent().parent().parent().parent().find(".has-sub").addClass("active");
+
+ // is mobile device
+if ($('header').width() > 480){
+
+var window_h = $(window).height();
+var document_h = $(document).height();
+var topbar_h = $("#header").height();
+var menu_h = $("#main-header").height();
+var top_h = (topbar_h + menu_h)+50;
+var left_height = document_h - top_h;
+var leftmenu_height = window_h - top_h;
+
+
+$("#accmenu").css("height",left_height);
+
+
+var widow_width = $(window).width();
+var left_menu_width = $(".scroll").width();
+var left_width = left_menu_width + 130;
+var right_width = (widow_width - left_width);
+$(".innercell").css("width",right_width);
+
+ }
+
+
+$( window ).resize(function() {
+     var window_h = $(window).height();
+     var pan_height = window_h - 20;
+     $(".scroll-pane").css("height",pan_height);
+var widow_width = $(window).width();
+var left_menu_width = $(".scroll").width();
+var left_width = left_menu_width + 130;
+var right_width = (widow_width - left_width);
+$(".innercell").css("width",right_width);
+});
+$( ".scroll" ).resize(function() {
+var widow_width = $(window).width();
+var left_menu_width = $(".scroll").width();
+var left_width = left_menu_width + 130;
+var right_width = (widow_width - left_width);
+$(".innercell").css("width",right_width);
+});
+    jQuery(".nav li.has-sub").mouseover(function() {
+        jQuery(this).addClass("down-arrow");
+    });
+    jQuery(".nav li.has-sub").mouseout(function() {
+        jQuery(this).removeClass("down-arrow");
+    });
+	jQuery(".nav li a").each(function() {
+		if (jQuery(this).next().length > 0) {
+			jQuery(this).addClass("parent");
+		};
+	})
+
+	jQuery(".toggleMenu").click(function(e) {
+		e.preventDefault();
+		jQuery(this).toggleClass("down-arrow");
+		jQuery(".nav").toggle();
+	});
+	adjustMenu();
+})
+
+jQuery(window).bind('resize orientationchange', function() {
+	ww = document.body.clientWidth;
+	adjustMenu();
+});
+
+var adjustMenu = function() {
+	if (ww < 768) {
+		jQuery(".toggleMenu").css("display", "inline-block");
+		if (!jQuery(".toggleMenu").hasClass("down-arrow")) {
+			jQuery(".nav").hide();
+		} else {
+			jQuery(".nav").show();
+		}
+		jQuery(".nav li").unbind('mouseenter mouseleave');
+		jQuery(".nav li a.parent").unbind('click').bind('click', function(e) {
+			// must be attached to anchor element to prevent bubbling
+			e.preventDefault();
+			jQuery(this).parent("li").toggleClass("hover");
+		});
+	}
+	else if (ww >= 768) {
+		jQuery(".toggleMenu").css("display", "none");
+		jQuery(".nav").show();
+		jQuery(".nav li").removeClass("hover");
+		jQuery(".nav li a").unbind('click');
+		jQuery(".nav li").unbind('mouseenter mouseleave').bind('mouseenter mouseleave', function() {
+		 	// must be attached to li so that mouseleave is not triggered when hover over submenu
+		 	jQuery(this).toggleClass('hover');
+		});
+	}
+}
+</script>
+
+<script type="text/javascript">
+( function( jQuery ) {
+jQuery( document ).ready(function() {
+
+jQuery('#accmenu > ul > li > span').click(function() {
+  jQuery('#accmenu li').removeClass('active');
+  jQuery(this).closest('li').addClass('active');
+  jQuery(this).addClass('active');
+  var checkElement = jQuery(this).next();
+  if((checkElement.is('ul')) && (checkElement.is(':visible'))) {
+    jQuery(this).closest('li').removeClass('active');
+    jQuery(this).removeClass('active');
+    checkElement.slideUp('normal');
+  }
+  if((checkElement.is('ul')) && (!checkElement.is(':visible'))) {
+   // jQuery('#accmenu ul ul:visible').slideUp('normal');
+    checkElement.slideDown('normal');
+  }
+  if(jQuery(this).closest('li').find('ul').children().length == 0) {
+    return true;
+  } else {
+    return false;
+  }
+});
+jQuery('#accmenu > ul > li > ul > li > span').click(function() {
+  jQuery(this).closest('li').addClass('active');
+  jQuery(this).addClass('active');
+  var checkElement = jQuery(this).next();
+  if((checkElement.is('ul')) && (checkElement.is(':visible'))) {
+    jQuery(this).closest('li').removeClass('active');
+    jQuery(this).removeClass('active');
+    checkElement.slideUp('normal');
+  }
+  if((checkElement.is('ul')) && (!checkElement.is(':visible'))) {
+   // jQuery('#accmenu ul ul ul:visible').slideUp('normal');
+	jQuery('#accmenu ul ul li.active').removeClass('active');
+    checkElement.slideDown('normal');
+	jQuery(this).closest('li').addClass('active');
+  }
+  if(jQuery(this).closest('li').find('ul').children().length == 0) {
+    return true;
+  } else {
+    return false;
+  }
+});
+});
+} )( jQuery );
+
+</script>
+<script>
+jQuery(".has-sub").parent().css("list-style","none");
+</script>
+<script>
+ /* $( "#mobile-hamburger" ).toggle(
+function() {
+     jQuery("#side-menu").css("width", "0px");
+ jQuery(this).css("left", "0px");
+  },
+ function() {
+    jQuery("#side-menu").css("width", "400px");
+ jQuery(this).css("left", "400px");
+  }
+);*/
+jQuery(document).ready(function() {
+$(".scroll").resizable();
+});
+</script>
+<script type="text/javascript">
+var append_menu = $('#append_menu').html();
+$(".aui-header-primary ul.aui-nav").prepend("<li class='dpdwn'>"+append_menu+"</li>");
+</script>
+<script type="text/javascript">
+$( ".login-section:contains('Log in')" ).css( "margin-left", "70px" );
+</script>
