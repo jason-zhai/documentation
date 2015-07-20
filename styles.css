@@ -1,7 +1,7 @@
 /* Custom styles for Confluence (included for all themes by default) */
 
 body {
-  background-color: #fff;
+  background-color: #f8f8f8;
 }
 #navigation {
   margin-bottom: -15px;
@@ -401,7 +401,7 @@ pre {
 }
 #main-content-container {
   min-height: 100px;
-  border: 1px #A9A9A9 solid;
+  border: 1px #e1e1e1 solid;
   font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #000000;
   background-color: #fff;
@@ -427,7 +427,7 @@ pre {
 }
 #main {
   min-height: 200px !important;
-  background-color: #fff;
+  background-color: #f8f8f8;
   max-width: 1200px;
 }
 .aui-header .aui-quicksearch input {
