@@ -31,6 +31,7 @@ body {
 }
 #header {
   position: fixed;
+  right: 0;
   width: 100%;
   z-index: 1;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
@@ -407,7 +408,7 @@ pre {
   background-color: #fff;
   font-size: 13px;
   border-radius: 3px;
-  margin-top: 49px;
+  margin-top: 59px;
   margin-bottom: 80px;
 }
 #main-content-container::after {
@@ -598,5 +599,30 @@ table.aui.tableview td a {
   #main {
     margin-left: 20px !important;
   }
+}
+
+#navigation.content-navigation {
+  margin-top: 60px;
+}
+#comments-section.pageSection {
+  display: none;
+}
+#messageContainer {
+  width: 500px;
+  position: absolute;
+  left: 40%;
+  z-index: 2;
+  display: none;
+}
+.contenteditor #main-header {
+  display: block !important;
+}
+.contenteditor #main-right-menu {
+  display: none;
+}
+#content.page.edit {
+  width: 90%;
+  height: 1100px;
+  padding: 70px 70px 90px 90px;
 }
 /* End custom styles for Confluence */
