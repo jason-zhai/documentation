@@ -681,6 +681,7 @@ var adjustMenu = function() {
                        element.removeClass('open');
                        //element.find('li').removeClass('open');
                        element.find('ul').slideUp();
+                       element.find('span.open').removeClass('open');
                    }
                    else {
                        $("#main-right-menu>ul>li.open>ul").slideUp();
@@ -703,6 +704,7 @@ var adjustMenu = function() {
                       element_s.removeClass('open');
                       element_s.find('li').removeClass('open');
                       element.find('ul').slideUp();
+                      element.find('span.open').removeClass('open');
                   }
                   else {
                       element_s.addClass('open');
@@ -759,6 +761,8 @@ var adjustMenu = function() {
             $("#main-right-menu .current").parent('li').parent('ul').css('display','block');
             $("#main-right-menu .current").parent('li').parent('ul').parent('li').addClass('open');
 
+            $("#main-right-menu .current").next('ul').css('display', 'block');
+            $("#main-right-menu .current").prev('span.has-sub').addClass('open');
            });
            } )( jQuery );
    /******** Accordion Script added by DDR for Side According Menu  END******/

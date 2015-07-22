@@ -371,7 +371,7 @@ pre {
 #main-right-menu >ul ul > li span.has-sub:before {
   content: "+";
   position: absolute;
-  line-height: 28px;
+  line-height: 32px;
   left: 17px;
   font-size: 16px;
 }
@@ -381,7 +381,7 @@ pre {
 #main-right-menu >ul ul > li span.has-sub.open:before {
   content: "-";
   position: absolute;
-  line-height: 28px;
+  line-height: 30px;
   left: 17px;
   font-size: 18px;
 }
