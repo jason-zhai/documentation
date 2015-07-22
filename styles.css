@@ -626,4 +626,13 @@ table.aui.tableview td a {
   height: 1100px;
   padding: 70px 70px 90px 90px;
 }
+.content ul li, .content ol li {
+  margin-bottom: 4px;
+}
+.content img {
+  margin: 8px;
+}
+.content h1 {
+  margin-bottom: 32px;
+}
 /* End custom styles for Confluence */
