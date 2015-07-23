@@ -474,32 +474,6 @@ pre {
   float: left;
 }
 
-/* Let's get this party started */
-
-::-webkit-scrollbar {
-  width: 5px;
-}
-
-/* Track */
-
-::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
-}
-
-/* Handle */
-
-::-webkit-scrollbar-thumb {
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
-  background: rgba(104, 104, 104, 0.8);
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
-}
-::-webkit-scrollbar-thumb:window-inactive {
-  background: rgba(104, 104, 104, 0.4);
-}
-
 /************ Updated by DDR - 01JUL15 : END ****************/
 
 @media (max-width: 1265px) {
@@ -635,4 +609,22 @@ table.aui.tableview td a {
 .content h1 {
   margin-bottom: 32px;
 }
+
+/* content area min height */
+html, body,
+#page,
+#full-height-container,
+.ia-splitter,
+#main,
+#content,
+#center-main-container {
+  height: 100%
+}
+#main {
+  height: 100% !important;
+}
+#main-content-container {
+  min-height: calc(100% - 116px);
+}
+
 /* End custom styles for Confluence */
