@@ -677,22 +677,40 @@ var adjustMenu = function() {
               $('#main-right-menu li.has-sub>a').on('click', function(){
                    $(this).removeAttr('href');
                    var element = $(this).parent('li');
+                   var menuBar = $('#main-right-menu');
+
+                   var stackTop = function() {
+                     var menuItemOpen = $('li.has-sub.open').parent();
+
+                     if(menuItemOpen.length !== 0 && menuItemOpen.position().top < 0) {
+                       var reset = menuItemOpen[0].offsetTop;
+                       menuBar.scrollTop(reset);
+                     }
+                   };
+
+                   var stackBottom = function() {
+                     var elementLast = $(this).closest('.has-sub.open').parent();
+                     if(elementLast.is(':last-child')) {
+                       menuBar.scrollTop(menuBar[0].scrollHeight);
+                     }
+                   }
+
                    if (element.hasClass('open')) {
                        element.removeClass('open');
                        //element.find('li').removeClass('open');
-                       element.find('ul').slideUp();
+                       element.find('ul').slideUp(stackTop);
                        element.find('span.open').removeClass('open');
                    }
                    else {
-                       $("#main-right-menu>ul>li.open>ul").slideUp();
+                       $("#main-right-menu>ul>li.open>ul").slideUp(stackTop);
                        $("#main-right-menu>ul>li.open").removeClass('open');
 
                        element.addClass('open');
-                       element.children('ul').slideDown();
-                       element.siblings('li').children('ul').slideUp();
+                       element.children('ul').slideDown(stackBottom);
+                       element.siblings('li').children('ul').slideUp(stackTop);
                        //element.siblings('li').removeClass('open');
                        //element.siblings('li').find('li').removeClass('open');
-                       element.siblings('li').find('ul').slideUp();
+                       element.siblings('li').find('ul').slideUp(stackTop);
                    }
                });
 
