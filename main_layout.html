@@ -299,13 +299,26 @@
                                  #foreach( $s in $spaceManager.getAllSpaces() )
 
                                  <ul>
-                                    #if ($s.getName().indexOf(".") > 0 )
-                                    #set($index = $s.getName().indexOf(".")+1)
-                                    <li class='has-sub'><a href='#'><span>$s.getName().substring($index)</span></a>
-                                       #else
-                                    <li class='has-sub'>
-                                       <a href='#'><span>$s.getName()</span></a>
-                                       #end
+
+
+                                    #if($!sitemeshPage.getProperty("page.spacekey") == $s.getKey())
+                                      #if ($s.getName().indexOf(".") > 0 )
+                                      #set($index = $s.getName().indexOf(".")+1)
+                                      <li class='has-sub open'><a href=$s.getHomePage().getUrlPath() class="current"><span>$s.getName().substring($index)</span></a>
+                                         #else
+                                      <li class='has-sub open'>
+                                         <a href=$s.getHomePage().getUrlPath() class="current"><span>$s.getName()</span></a>
+                                         #end
+                                    #else
+                                      #if ($s.getName().indexOf(".") > 0 )
+                                      #set($index = $s.getName().indexOf(".")+1)
+                                      <li class='has-sub'><a href=$s.getHomePage().getUrlPath()><span>$s.getName().substring($index)</span></a>
+                                         #else
+                                      <li class='has-sub'>
+                                         <a href=$s.getHomePage().getUrlPath()><span>$s.getName()</span></a>
+                                         #end
+                                    #end
+
                                   <ul>
 
                                           #foreach( $page in $s.getHomePage().getSortedChildren() )
@@ -674,8 +687,11 @@ var adjustMenu = function() {
                      $('#main').css('padding-top','0px');
               }
 
-              $('#main-right-menu li.has-sub>a').on('click', function(){
-                   $(this).removeAttr('href');
+              $('#main-right-menu li.has-sub>a').on('click', function(e){
+                   if ($(this).hasClass('current')) {
+
+
+                   e.preventDefault();
                    var element = $(this).parent('li');
                    var menuBar = $('#main-right-menu');
 
@@ -711,6 +727,8 @@ var adjustMenu = function() {
                        //element.siblings('li').removeClass('open');
                        //element.siblings('li').find('li').removeClass('open');
                        element.siblings('li').find('ul').slideUp(stackTop);
+                   }
+
                    }
                });
 
