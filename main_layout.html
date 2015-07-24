@@ -304,17 +304,17 @@
                                     #if($!sitemeshPage.getProperty("page.spacekey") == $s.getKey())
                                       #if ($s.getName().indexOf(".") > 0 )
                                       #set($index = $s.getName().indexOf(".")+1)
-                                      <li class='has-sub open'><a href=$s.getHomePage().getUrlPath() class="current"><span>$s.getName().substring($index)</span></a>
+                                      <li class='has-sub top open'><a href=$s.getHomePage().getUrlPath() class="current"><span>$s.getName().substring($index)</span></a>
                                          #else
-                                      <li class='has-sub open'>
+                                      <li class='has-sub top open'>
                                          <a href=$s.getHomePage().getUrlPath() class="current"><span>$s.getName()</span></a>
                                          #end
                                     #else
                                       #if ($s.getName().indexOf(".") > 0 )
                                       #set($index = $s.getName().indexOf(".")+1)
-                                      <li class='has-sub'><a href=$s.getHomePage().getUrlPath()><span>$s.getName().substring($index)</span></a>
+                                      <li class='has-sub top'><a href=$s.getHomePage().getUrlPath()><span>$s.getName().substring($index)</span></a>
                                          #else
-                                      <li class='has-sub'>
+                                      <li class='has-sub top'>
                                          <a href=$s.getHomePage().getUrlPath()><span>$s.getName()</span></a>
                                          #end
                                     #end
@@ -326,26 +326,34 @@
                                           #set($isExists = "#checkAncestors($pageManager.getPages($s,true) $page.getAncestors() $s)")
                                           #if(!$exists)
                                           #if($!sitemeshPage.getProperty("page.pageId") == $page.getContentId().asLong())
-                                          <li>
-                                           #if($page.hasChildren())
-                                             <span class='has-sub'><a class="close-expand-icon"></a></span>
-                                             #end
+                                            #if($page.hasChildren())
+                                              <li class="has-sub open">
+                                                <span class='has-sub'><a class="close-expand-icon"></a></span>
+                                            #else
+                                              <li>
+                                            #end
                                              <a href=$page.getUrlPath() class="current"><span>$page.getTitle() </span></a>
-                                             #else
-                                          <li>
-                                             #if($page.hasChildren())
-                                             <span class='has-sub'><a class="close-expand-icon"></a></span>
-                                             #end
+                                          #else
+                                            #if($page.hasChildren())
+                                              <li class="has-sub">
+                                                <span class='has-sub'><a class="close-expand-icon"></a></span>
+                                            #else
+                                              <li>
+                                            #end
                                              <a href=$page.getUrlPath()><span> $page.getTitle()</span></a>
-                                             #end
+                                          #end
                                              #if($page.hasChildren())
                                              <ul>
                                                 #foreach( $cp in $page.getSortedChildren()  )
                                                 #if($!sitemeshPage.getProperty("page.pageId") == $cp.getContentId().asLong())
-                                                <li>
+
                                                  #if($cp.hasChildren())
+                                                <li class="has-sub open">
                                                 <span class='has-sub'><a class="close-expand-icon"></a></span>
+                                                #else
+                                                <li>
                                                 #end
+
                                                  <a href=$cp.getUrlPath() class="current"><span>$cp.getTitle() </span></a>
                                                    #else
                                                 <li>
@@ -688,25 +696,34 @@ var adjustMenu = function() {
               }
 
               $('#main-right-menu li.has-sub>a').on('click', function(e){
+                   console.log('menu link item clicked');
+
                    if ($(this).hasClass('current')) {
 
-
+                    console.log('current page menu link item clicked');
                    e.preventDefault();
                    var element = $(this).parent('li');
                    var menuBar = $('#main-right-menu');
 
                    var stackTop = function() {
-                     var menuItemOpen = $('li.has-sub.open').parent();
+                     var menuItemOpen = $(this).closest('.has-sub.open').parent();
+                     var menuTop = menuItemOpen.parent();
 
                      if(menuItemOpen.length !== 0 && menuItemOpen.position().top < 0) {
+                       console.log('stackTop happening ' + menuItemOpen.position().top);
                        var reset = menuItemOpen[0].offsetTop;
                        menuBar.scrollTop(reset);
                      }
+
+
+                        element.find('span.open').removeClass('open');
+                        element.find('.has-sub.open').removeClass('open');
+
                    };
 
                    var stackBottom = function() {
                      var elementLast = $(this).closest('.has-sub.open').parent();
-                     if(elementLast.is(':last-child')) {
+                     if(elementLast.is(':last-child') && !elementLast.is(':first-of-type')) {
                        menuBar.scrollTop(menuBar[0].scrollHeight);
                      }
                    }
@@ -715,11 +732,11 @@ var adjustMenu = function() {
                        element.removeClass('open');
                        //element.find('li').removeClass('open');
                        element.find('ul').slideUp(stackTop);
-                       element.find('span.open').removeClass('open');
+                       $(this).prev('span.open').removeClass('open');
                    }
                    else {
-                       $("#main-right-menu>ul>li.open>ul").slideUp(stackTop);
-                       $("#main-right-menu>ul>li.open").removeClass('open');
+                       //$("#main-right-menu>ul>li.open>ul").slideUp(stackTop);
+                       //$("#main-right-menu>ul>li.open").removeClass('open');
 
                        element.addClass('open');
                        element.children('ul').slideDown(stackBottom);
@@ -727,6 +744,7 @@ var adjustMenu = function() {
                        //element.siblings('li').removeClass('open');
                        //element.siblings('li').find('li').removeClass('open');
                        element.siblings('li').find('ul').slideUp(stackTop);
+                       $(this).prev('span').addClass('open');
                    }
 
                    }
@@ -741,9 +759,11 @@ var adjustMenu = function() {
                       element_s.find('li').removeClass('open');
                       element.find('ul').slideUp();
                       element.find('span.open').removeClass('open');
+                      element.find('.has-sub.open').removeClass('open');
                   }
                   else {
                       element_s.addClass('open');
+                      element.addClass('open');
                       element.children('ul').slideDown();
                       element.siblings('li').children('ul').slideUp();
                       element.siblings('span').removeClass('open');
