@@ -356,9 +356,12 @@
 
                                                  <a href=$cp.getUrlPath() class="current"><span>$cp.getTitle() </span></a>
                                                    #else
-                                                <li>
+
                                                 #if($cp.hasChildren())
+                                                <li class="has-sub">
                                                 <span class='has-sub'><a class="close-expand-icon"></a></span>
+                                                #else
+                                                <li>
                                                 #end
                                                    <a href=$cp.getUrlPath()><span>$cp.getTitle() </span></a>
                                                    #end
@@ -697,8 +700,9 @@ var adjustMenu = function() {
 
               $('#main-right-menu li.has-sub>a').on('click', function(e){
                    console.log('menu link item clicked');
+                   var findCurrent = $(this).parent().find('.current');
 
-                   if ($(this).hasClass('current')) {
+                   if ($(this).hasClass('current') || findCurrent.hasClass('current')) {
 
                     console.log('current page menu link item clicked');
                    e.preventDefault();
@@ -756,6 +760,7 @@ var adjustMenu = function() {
                   var element_s = $(this).parent('span');
                   if (element_s.hasClass('open')) {
                       element_s.removeClass('open');
+                      element_s_li.removeClass('open');
                       element_s.find('li').removeClass('open');
                       element.find('ul').slideUp();
                       element.find('span.open').removeClass('open');
