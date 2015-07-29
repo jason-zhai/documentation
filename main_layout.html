@@ -699,37 +699,36 @@ var adjustMenu = function() {
               }
 
               $('#main-right-menu li.has-sub>a').on('click', function(e){
-                   console.log('menu link item clicked');
                    var findCurrent = $(this).parent().find('.current');
-
-                   if ($(this).hasClass('current') || findCurrent.hasClass('current')) {
-
-                    console.log('current page menu link item clicked');
-                   e.preventDefault();
                    var element = $(this).parent('li');
                    var elementPlus = $(this).prev('span');
                    var menuBar = $('#main-right-menu');
 
-                   if (element.hasClass('open')) {
-                       element.removeClass('open');
-                       element.find('li').removeClass('open');
-                       element.find('span').removeClass('open');
-                       element.find('ul').slideUp();
-                       elementPlus.removeClass('open');
-                   }
-                   else {
-                       //$("#main-right-menu>ul>li.open>ul").slideUp();
-                       //$("#main-right-menu>ul>li.open").removeClass('open');
+                   if ($(this).hasClass('current') || findCurrent.hasClass('current') || element.hasClass('has-sub')) {
 
-                       element.addClass('open');
-                       element.children('ul').slideDown();
-                       //element.siblings('li').children('ul').slideUp();
-                       //element.siblings('li').removeClass('open');
-                       //element.siblings('li').find('li').removeClass('open');
-                       element.siblings('li').find('span').removeClass('open');
-                       elementPlus.addClass('open');
-                       element.siblings('li').find('ul').slideUp();
-                   }
+                     e.preventDefault();
+
+                     if (element.hasClass('open')) {
+                         element.removeClass('open');
+                         element.find('li').removeClass('open');
+                         element.find('span').removeClass('open');
+                         element.find('ul').slideUp();
+                         elementPlus.removeClass('open');
+                     }
+                     else {
+                         //$("#main-right-menu>ul>li.open>ul").slideUp();
+                         //$("#main-right-menu>ul>li.open").removeClass('open');
+
+                         element.addClass('open');
+                         element.children('ul').slideDown();
+                         //element.siblings('li').children('ul').slideUp();
+                         //element.siblings('li').removeClass('open');
+                         //element.siblings('li').find('li').removeClass('open');
+                         element.siblings('li').find('span').removeClass('open');
+                         elementPlus.addClass('open');
+                         element.siblings('li').find('ul').slideUp();
+                         element.parent().siblings('ul').find('.top.open > a').trigger( "click" );
+                     }
 
                    }
                });
