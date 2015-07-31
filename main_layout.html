@@ -778,11 +778,20 @@ var adjustMenu = function() {
                   // $('#main-content-container').css('max-height',main_area_height+'px');
                   // $('.aui-page-panel-inner').css('max-height',search_area_height+'px');
 
-                  $('#main').css('height',main+'px');
+                  //$('#main').css('height',main+'px');
               } else {
                   //$('#main-right-menu').css('height','200px');
                   //$('#main-content-container').css('height','200px');
               }
+
+              $(window).scroll(function() {
+                if($('#main-right-menu').hasClass('atBottom')) {
+                  $('#main-right-menu').removeClass('atBottom');
+                }
+                if($(window).scrollTop() + $(window).height() == $(document).height()) {
+                   $('#main-right-menu').addClass('atBottom');
+                 }
+              });
 
              $( window ).resize(function() {
                 var window_height = $(window).height();
