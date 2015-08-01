@@ -339,7 +339,7 @@ pre {
   transition: bottom 0.5s;
 }
 #main-right-menu.atBottom {
-  bottom: 80px;
+  bottom: 89px;
 }
 #main-right-menu .top.open > a {
   background-color: #f9f9f9;
