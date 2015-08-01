@@ -1,0 +1,423 @@
+#navigation
+{
+margin-bottom: -15px;
+}
+#search-form h1
+{
+padding-left: 70px !important;
+}
+#footer
+{
+background-color: #303a49;
+}
+.wiki-content p
+{
+word-wrap: break-word !important;
+word-break: normal !important;
+}
+#accmenu > ul > li > a
+{
+font-size: 14px;
+}
+#accmenu ul ul a
+{
+font-size: 14px;
+}
+#status
+{
+margin-left: 70px !important;
+}
+.greyboxfilled
+{
+margin-left:0 !important;
+}
+.aui-header-primary
+{
+margin-left: 20px;
+}
+
+
+.edit
+{
+margin-left:3% !important;
+}
+
+#accmenu{
+width:98%;
+}
+.content
+{
+padding-top:10px;
+}
+.cell
+{
+max-width:940px;
+}
+
+pre {
+color: #5A7685;
+font-size: 16px;
+font-weight: 400;
+line-height: 1em;
+ white-space: pre-wrap;       /* css-3 */
+ white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+ white-space: -pre-wrap;      /* Opera 4-6 */
+ white-space: -o-pre-wrap;    /* Opera 7 */
+ word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+.confluenceTable
+{
+color: #000;
+font-size: 16px;
+font-weight: 400;
+}
+.message-content
+{
+color: #5A7685;
+font-size: 16px;
+}
+
+.dpdwn ul{
+    display: none;
+position: absolute;
+  z-index: 100000;
+  background-color: #fff;
+  width: 150px;
+  border: 1px solid #ccc;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+.dpdwn:hover ul {
+   display:block;
+ margin:0;
+ padding:0;
+
+}
+.dpdwn:hover ul li {
+ display:inline;
+}
+.dpdwn ul li a
+{
+padding: 5px 10px;
+}
+.aui-nav
+{
+margin-left:20px !important;
+}
+#space-menu-link
+{
+display:none;
+}
+.aui-nav strong
+{
+color:#000;
+padding:10px;
+}
+#space-labels-list
+{
+display:none;
+}
+.aui-nav-heading
+{
+display:none;
+}
+#side-menu #menu-logo
+{
+height:80px !important;
+}
+h1
+{
+font-size: 28px !important;
+color: #0171b9 !important;
+letter-spacing: 1px !important;
+margin-top: -6px !important;
+}
+.nav > li:hover
+{
+	background-color:#0171b9;
+	color:#fff;
+}
+.nav > li.active
+{
+	background-color:#0171b9;
+	color:#fff;
+}
+#header .aui-header .aui-button.aui-button-primary.aui-style:hover, .aui-header .aui-button.aui-button-primary.aui-style:focus{
+background-color:#0171b9 !important;
+padding-top: 9px;
+padding-bottom: 32px;
+}
+.wiki-content a, .wiki-content a:link
+{
+color:#0171b9 !important;
+}
+.wiki-content h2
+{
+font-weight:bold;
+color:#0171b9 !important;
+}
+.wiki-content h3
+{
+font-size:20px !important;
+font-weight:normal !important;
+color:#0171b9 !important;
+}
+.wiki-content h4
+{
+font-size:16px !important;
+color:#0171b9 !important;
+font-weight:bold !important;
+}
+.wiki-content h5
+{
+font-size:16px !important;
+font-weight:bold !important;
+color:#0171b9 !important;
+}
+.wiki-content h6
+{
+font-size:16px !important;
+font-weight:normal !important;
+color:#0171b9 !important;
+}
+#header .aui-header a:hover
+{
+background-color:#0171b9 !important;
+}
+.aui-dropdown2.aui-style-default a.active
+{
+background-color:#0171b9 !important;
+}
+.aui-header .aui-dropdown2-trigger:hover, .aui-header .aui-dropdown2-trigger.active, #header .aui-header .aui-nav-link.active, #header .aui-header .aui-nav-imagelink.active, #header .aui-header .aui-nav-imagelink:focus, #header .aui-header .aui-nav-imagelink:hover, #header .aui-header a:focus, #header .aui-header a:hover, #header .aui-header a:active
+{
+background-color:#0171b9 !important;
+}
+.wiki-content a, .wiki-content a:link
+ {
+  color: #0171b9 !important;
+}
+.nav li li:hover a {
+    color: #FF8100 !important;
+}
+.nav li li a:hover
+{
+	color:#FF8100;
+}
+.nav li ul li a.active
+{
+	color: #FF8100 !important;
+}
+#accmenu > ul > li >a.active {
+  color:#FF8100;
+}
+#accmenu > ul > li > ul > li > a.active
+{
+ color:#FF8100;
+}
+#accmenu > ul > li > ul > li > ul > li >a.active
+{
+color:#FF8100;
+}
+.wiki-content a:hover
+{
+color: #FF8100 !important;
+text-decoration:underline;
+}
+p
+{
+color: #000 !important;
+}
+#accmenu > ul > li
+{
+color:#000;
+}
+#accmenu > ul > li > a
+{
+color:#000;
+}
+#accmenu > ul > li > ul > li > a
+{
+color:#000;
+}
+#accmenu > ul > li > ul > li > ul > li > a
+{
+color:#000;
+}
+#accmenu > ul > li.active > a
+{
+color:#000;
+}
+#accmenu > ul > li > a:hover
+{
+color:#FF8100;
+}
+#accmenu > ul > li > ul > li > a:hover
+{
+color:#FF8100;
+}
+#accmenu > ul > li > ul > li > ul > li > a:hover
+{
+color:#FF8100;
+}
+.content
+{
+color:#000 Important;
+}
+.wiki-content ul
+{
+color:#000;
+}
+.wiki-content ol
+{
+color:#000;
+}
+.wysiwyg-macro-body p
+{
+color:#000 Important;
+}
+.mceContentBody ul
+{
+color:#000 Important;
+}
+.mceContentBody ol
+{
+color:#000 Important;
+}
+ul.toc-indentation li a
+{
+color:#0171b9 Important;
+}
+blockquote
+{
+color:#000 !important;
+}
+.blank-experience-container p
+{
+color:#000 !important;
+}
+.nav > li > a {
+    display: block;
+	color:#000;
+}
+.nav li li a
+{
+color:#000 !important;
+width:200px;
+}
+ul.toc-indentation li a
+{
+color: #0171b9 !important;
+}
+span.has-sub:after
+{
+border-left: 5px solid #000;
+}
+span.has-sub.active:after
+{
+border-top: 5px solid #000;
+}
+#accmenu > ul > li > ul > li
+{
+color:#000;
+}
+#accmenu > ul > li > ul > li.active > a
+{
+color:#000;
+}
+#accmenu > ul > li > ul > li > ul > li
+{
+color:#000;
+}
+.update-item-meta
+{
+color:#000 !important;
+}
+pre
+{
+color:#000;
+}
+.update-item-details
+{
+color:#000 !important;
+}
+.nowrap-top
+{
+white-space: normal !important;
+}
+.nav li ul
+{
+z-index:10;
+}
+
+@media (min-width: 992px) {
+  #side-menu nav a {
+    padding-top: 55px;
+    height:80px;
+  }
+
+.scroll-pane
+{
+position: absolute;
+overflow-y: scroll;
+width:217px;
+overflow-x:hidden;
+height:610px;
+}
+#side-menu nav a .menu-icon
+{
+top:19px !important;
+}
+#createpageform
+{
+margin-left: 3%;
+}
+.aui-toolbar2 .aui-toolbar2-secondary
+{
+right: 42px !important;
+}
+.aui-toolbar .toolbar-split.toolbar-split-right
+{
+margin-right: 33px;
+}
+table
+{
+color:#000;
+}
+#searchfield
+{
+margin-left: 6%;
+}
+table.aui.tableview td a
+{
+margin-left: 4%;
+}
+@media screen and (max-width:640px) {
+.scroll
+{
+float:none !important;
+}
+}
+.aui-page-panel
+{
+margin-left:70px !important;
+}
+#people-search
+{
+margin-right:10%;
+}
+#follow-container
+{
+margin-left:10px;
+}
+.rss
+{
+padding-left:10px;
+}
+@media only screen and (min-width:800px) and (max-width:1280px)
+{
+.scroll
+{
+float:left;
+}
+}
