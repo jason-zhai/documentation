@@ -137,77 +137,9 @@
                $!sitemeshPage.getProperty("page.theme-header")
                #end
                #elseif ($useNewSpaceIA && $sitemeshPage.getProperty("page.ia-sidebar"))
-               <div class="ia-splitter">
-                  <div class="ia-splitter-left">
-                     <div class="ia-fixed-sidebar">
-                        <!-- \#Cliqr Menu -->
-                        <a id="mobile-hamburger" class="mobile-menu-toggle" href="#toggle-menu">
-                           <div></div>
-                           <div></div>
-                           <div></div>
-                        </a>
-                        <div id="side-menu">
-                           <div class="scroll-pane">
-                              <a href="http://www.cliqr.com/" id="menu-logo" class="closed-menu-logo menu-link" target="_blank">
-                              <span class="image"></span>
-                              </a>
-                              <nav>
-                                 <ul>
-                                    <li class="solutions-menu-li">
-                                       <a class="solutions-menu-item" href="http://www.cliqr.com/solutions/" target="_blank">
-                                       <span class="menu-icon solutions"></span>
-                                       <span class="menu-item-text">Solutions</span>
-                                       </a>
-                                    </li>
-                                    <li class="platform-menu-li">
-                                       <a class="platform-menu-item" href="http://www.cliqr.com/platform/" target="_blank">
-                                       <span class="menu-icon platform"></span>
-                                       <span class="menu-item-text">Platform</span>
-                                       </a>
-                                    </li>
-                                    <li class="company-menu-li">
-                                       <a class="company-menu-item" href="http://www.cliqr.com/company/" target="_blank">
-                                       <span class="menu-icon company"></span>
-                                       <span class="menu-item-text">Company</span>
-                                       </a>
-                                    </li>
-                                    <li class="partners-menu-li">
-                                       <a class="partners-menu-item" href="http://www.cliqr.com/partners/" target="_blank">
-                                       <span class="menu-icon partners"></span>
-                                       <span class="menu-item-text">Partners</span>
-                                       </a>
-                                    </li>
-                                    <li class="resources-menu-li">
-                                       <a class="resources-menu-item" href="http://www.cliqr.com/resources/" target="_blank">
-                                       <span class="menu-icon resources"></span>
-                                       <span class="menu-item-text">Resources</span>
-                                       </a>
-                                    </li>
-                                    <li class="docs-menu-li">
-                                       <a class="active docs-menu-item" href="/display/ABOUT/About+Home" >
-                                       <span class="menu-icon docs"></span>
-                                       <span class="menu-item-text">Docs</span>
-                                       </a>
-                                    </li>
-                                    <li class="blog-menu-li">
-                                       <a class="blog-menu-item" href="http://www.cliqr.com/blog/" target="_blank">
-                                       <span class="menu-icon blog"></span>
-                                       <span class="menu-item-text">Blog</span>
-                                       </a>
-                                    </li>
-                                    <li class="careers-menu-li">
-                                       <a class="careers-menu-item" href="http://www.cliqr.com/careers/" target="_blank">
-                                       <span class="menu-icon careers"></span>
-                                       <span class="menu-item-text">Careers</span>
-                                       </a>
-                                    </li>
-                                 </ul>
-                              </nav>
-                           </div>
-                        </div>
-                        <!-- \#Cliqr Menu -->
-                     </div>
-                  </div>
+
+                <div class="myDocContent">
+
                   #end
                   <!-- \#header -->
                   ## CONTENT DIV BEGINS
@@ -220,6 +152,7 @@
                   #set ($personalClass = "has-blog-sidebar")
                   #end
                   #if ($sitemeshPage.getProperty("page.show-main-container") != "false")
+                  <div class="ia-splitter">
                   <div id="main" class="$!personalClass aui-page-panel">
                      #if ($sitemeshPage.getProperty("page.show-main-header") != "false")
                      <div id="main-header">
@@ -470,7 +403,8 @@
                   ## CONTENT DIV ENDS
                   #if($sitemeshPage.getProperty("page.tree"))
                   $!sitemeshPage.getProperty("page.theme-footer")
-               </div>
+                </div>
+              </div>
             </div>
             #end
             #set ($footerContext = {'spaceKey': $!spaceKey})
@@ -530,7 +464,14 @@
 var ww = document.body.clientWidth;
 
 jQuery(document).ready(function() {
+    var search = $('#search-results-header');
+    var spaceDirectory = $('#space-directory');
+    var spaceOperation = $('.space-operations');
+    var space = $('#content.space');
 
+    if(search.length > 0 || spaceDirectory.length > 0 || spaceOperation.length > 0 || space.length > 0) {
+      $('#right-main-container').hide();
+    }
     $( ".search-results" ).append( "<a href='display/ABOUT/About+Home ' class='home-back-btn'>Back To Home</a>" );
 
     /* First Level Active Menu Open*/

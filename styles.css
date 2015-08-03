@@ -457,13 +457,13 @@ pre {
   margin: auto !important;
 }
 #search-results-header {
-  float: left;
-  width: 68%;
+  width: 100%;
   margin-left: 16px;
   margin-top: 0px;
+  padding-top: 80px;
 }
 .aui-page-panel-inner {
-  width: 70%;
+  width: 100%;
   margin-left: 0;
   padding-left: 16px;
   overflow-y: auto;
@@ -471,11 +471,11 @@ pre {
 }
 .aui-page-panel-inner .aui-page-panel-content {
   display: block;
-  width: 37%;
+  width: auto;
   float: left;
 }
 .aui-page-panel-inner .aui-page-panel-sidebar {
-  display: block;
+  display: none;
   width: 30%;
   float: left;
 }
@@ -643,5 +643,30 @@ div#content::after {
   display: block;
   clear: both;
 }
-
+.search-results-page-panel-nav {
+  width: 25%;
+}
+.filter-wrapper.user-picker {
+  display: none;
+}
+.space-filter #search-filter-include-archived {
+  display: block;
+}
+label[for="search-filter-include-archived"] {
+  position: relative;
+  top: -19px;
+  left: 20px;
+}
+.aui-nav[data-key="type"] {
+  display: none;
+}
+#right-main-container {
+  display: none;
+}
+.myDocContent #right-main-container {
+  display: block;
+}
+#content.space {
+  padding-top: 35px;
+}
 /* End custom styles for Confluence */
