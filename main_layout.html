@@ -793,23 +793,6 @@ var adjustMenu = function() {
                  }
               });
 
-             $( window ).resize(function() {
-                var window_height = $(window).height();
-                var offset_top = $('#right-main-container').offset().top;
-                var footer_height = $('#footer').height();
-                var other_height = offset_top + footer_height+10;
-                var main_area_height = window_height - other_height;
-                var main = main_area_height + 65;
-                if(main_area_height > 200){
-                    //$('#main-right-menu').css('height',main_area_height+'px');
-                    //$('#main-content-container').css('height',main_area_height+'px');
-                    $('#main').css('height',main+'px');
-                } else {
-                    //$('#main-right-menu').css('height','200px');
-                    //$('#main-content-container').css('height','200px');
-                }
-             });
-
             $("#main-right-menu .current").parent('li').parent('ul').parent('li').children('.has-sub').addClass('open');
             $("#main-right-menu .open").parent('li').parent('ul').css('display','block');
             $("#main-right-menu .current").parent('li').parent('ul').parent('li').parent('ul').parent('li').children('.has-sub').addClass('open');
