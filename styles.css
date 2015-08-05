@@ -673,4 +673,7 @@ label[for="search-filter-include-archived"] {
 #content.space {
   padding-top: 35px;
 }
+.confluenceTable, .table-wrap {
+    overflow-x: visible;
+}
 /* End custom styles for Confluence */
