@@ -589,6 +589,10 @@ table.aui.tableview td a {
 
 #navigation.content-navigation {
   margin-top: 60px;
+  position: absolute;
+  height: 30px;
+  top: 0;
+  right: 0;
 }
 #comments-section.pageSection {
   display: none;
