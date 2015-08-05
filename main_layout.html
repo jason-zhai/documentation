@@ -277,40 +277,16 @@
                                           #end
                                              #if($page.hasChildren())
                                              <ul>
-                                                #foreach( $cp in $page.getSortedChildren()  )
+                                              #foreach( $cp in $page.getSortedChildren()  )
                                                 #if($!sitemeshPage.getProperty("page.pageId") == $cp.getContentId().asLong())
-
-                                                 #if($cp.hasChildren())
-                                                <li class="has-sub open">
-                                                <span class='has-sub'><a class="close-expand-icon"></a></span>
+  						                                  <li>
+                                                   <a href=$cp.getUrlPath() class="current"><span>$cp.getTitle() </span></a>
                                                 #else
-                                                <li>
-                                                #end
-
-                                                 <a href=$cp.getUrlPath() class="current"><span>$cp.getTitle() </span></a>
-                                                   #else
-
-                                                #if($cp.hasChildren())
-                                                <li class="has-sub">
-                                                <span class='has-sub'><a class="close-expand-icon"></a></span>
-                                                #else
-                                                <li>
-                                                #end
+  						                                  <li>
                                                    <a href=$cp.getUrlPath()><span>$cp.getTitle() </span></a>
-                                                   #end
-                                                   #if($cp.hasChildren())
-                                                   <ul>
-                                                      #foreach( $scp in $cp.getSortedChildren()  )
-                                                      #if($!sitemeshPage.getProperty("page.pageId") == $scp.getContentId().asLong())
-                                                      <li><a  href=$scp.getUrlPath() class="current"><span>$scp.getTitle() </span></a>
-                                                         #else
-                                                      <li><a  href=$scp.getUrlPath()><span>$scp.getTitle() </span></a></li>
-                                                      #end
-                                                      #end
-                                                   </ul>
-                                                   #end
-                                                </li>
                                                 #end
+                                                </li>
+                                              #end
                                              </ul>
                                              #end
                                              #end
@@ -747,7 +723,21 @@ var adjustMenu = function() {
             $("#main-right-menu .current").next('ul').css('display', 'block');
             $("#main-right-menu .current").prev('span.has-sub').addClass('open');
            });
-           } )( jQuery );
+
+           $('a[href*=#]:not([href=#])').click(function() {
+             if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+               var target = $(this.hash);
+               target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+               if (target.length) {
+                 $('html,body').animate({
+                   scrollTop: target.offset().top - 50
+                 }, 1000);
+                 return false;
+               }
+             }
+           });
+
+    } )( jQuery );
    /******** Accordion Script added by DDR for Side According Menu  END******/
 </script>
 <script>
