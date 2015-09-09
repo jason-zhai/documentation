@@ -440,12 +440,9 @@
 var ww = document.body.clientWidth;
 
 jQuery(document).ready(function() {
-    var search = $('#search-results-header');
-    var spaceDirectory = $('#space-directory');
-    var spaceOperation = $('.space-operations');
-    var space = $('#content.space');
+    var hideMenu = $('#search-results-header').length + $('#space-directory').length + $('.space-operations').length + $('#content.space').length + $('#content.view-information').length;
 
-    if(search.length > 0 || spaceDirectory.length > 0 || spaceOperation.length > 0 || space.length > 0) {
+    if(hideMenu > 0) {
       $('#right-main-container').hide();
     }
     $( ".search-results" ).append( "<a href='display/ABOUT/About+Home ' class='home-back-btn'>Back To Home</a>" );
