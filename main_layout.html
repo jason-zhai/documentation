@@ -425,7 +425,7 @@
 #if (!$user)
 <script>
    $(document).ready(function(){
-      $("#action-menu-modify").remove();
+   $("#action-menu-modify").remove();
    $("#action-menu-primary").remove();
    $("#view-page-info-link").parent().remove();
    $("#link-to-page-link").parent().remove();
@@ -440,7 +440,12 @@
 var ww = document.body.clientWidth;
 
 jQuery(document).ready(function() {
-    var hideMenu = $('#search-results-header').length + $('#space-directory').length + $('.space-operations').length + $('#content.space').length + $('#content.view-information').length;
+    var hideMenu = $('#search-results-header').length +
+                   $('#space-directory').length +
+                   $('.space-operations').length +
+                   $('#content.space').length +
+                   $('#content.view-attachments').length + 
+                   $('#content.view-information').length;
 
     if(hideMenu > 0) {
       $('#right-main-container').hide();
