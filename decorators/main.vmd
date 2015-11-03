@@ -787,6 +787,10 @@ var adjustMenu = function() {
              }
            });
 
+           $(".select-style select").each(function () {
+              $(this).val($(this).find('option[selected]').val());
+           });
+
     } )( jQuery );
    /******** Accordion Script added by DDR for Side According Menu  END******/
 </script>
