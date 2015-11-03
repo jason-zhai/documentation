@@ -39,7 +39,7 @@
       <style>
         .select-style {
             padding: 0;
-            margin: 4px auto;
+            margin: 8px auto;
             border: 1px solid #ccc;
             width: 272px;
             border-radius: 3px;
@@ -59,7 +59,10 @@
             border-top: 5px solid #ccc;
         }
         .select-style select {
-            padding: 5px 8px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #0171b9;
+            padding: 7px 10px;
             width: 100%;
             border: none;
             box-shadow: none;
@@ -68,6 +71,7 @@
             -webkit-appearance: none;
                -moz-appearance: none;
                     appearance: none;
+            cursor: pointer;
         }
         .select-style select:focus {
             outline: none;
