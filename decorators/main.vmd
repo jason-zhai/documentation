@@ -36,47 +36,6 @@
       <link href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700,400italic,700italic" rel="stylesheet" type="text/css">
       <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
       <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
-      <style>
-        .select-style {
-            padding: 0;
-            margin: 8px auto;
-            border: 1px solid #ccc;
-            width: 272px;
-            border-radius: 3px;
-            overflow: hidden;
-            background-color: #fff;
-        }
-        .select-style::after {
-            content: ' ';
-            position: absolute;
-            display: block;
-            width: 0;
-            height: 0;
-            top: 40%;
-            right: 20px;
-            border-left: 5px solid transparent;
-            border-right: 5px solid transparent;
-            border-top: 5px solid #ccc;
-        }
-        .select-style select {
-            font-size: 14px;
-            font-weight: bold;
-            color: #0171b9;
-            padding: 7px 10px;
-            width: 100%;
-            border: none;
-            box-shadow: none;
-            background-color: transparent;
-            background-image: none;
-            -webkit-appearance: none;
-               -moz-appearance: none;
-                    appearance: none;
-            cursor: pointer;
-        }
-        .select-style select:focus {
-            outline: none;
-        }
-      </style>
    </head>
    ## HTML HEADER ENDS
    ## HTML BODY BEGINS
