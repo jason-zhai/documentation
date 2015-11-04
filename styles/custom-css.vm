@@ -722,6 +722,9 @@ label[for="search-filter-include-archived"] {
 .select-style select:focus {
     outline: none;
 }
+.select-style select::-ms-expand {
+    display: none;
+}
 /* End custom styles for Confluence */
 
 #end
