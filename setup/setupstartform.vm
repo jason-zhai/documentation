@@ -1,0 +1,51 @@
+#if ($action.FromScratch)
+    <div class="aui-item setup-start-divider">
+        <h2>$action.getText("setup.start.eval.heading")</h2>
+        <p>$action.getText("setup.start.eval.wizard")</p>
+        <ul>
+            <li>$action.getText("setup.start.eval.wizard.bullet1")</li>
+            <li>$action.getText("setup.start.eval.wizard.bullet2")</li>
+        </ul>
+
+        <p style="color: #707070; margin-top: 20px">$action.getText("setup.start.eval.embedded-hint")</p>
+
+        <div class="aui-panel setup-start-buttons">
+            <input class="aui-button" type="submit" name="setupTypeInstall" value="$action.getText('setup.start.eval.start-trial')"/>
+        </div>
+    </div>
+
+
+    <div class="aui-item">
+        <h2>$action.getText("setup.start.custom.heading")</h2>
+        <p>$action.getText("setup.start.custom.wizard")</p>
+        <ul>
+            <li>$action.getText("setup.start.custom.wizard.bullet1")</li>
+            <li>$action.getText("setup.start.custom.wizard.bullet2")</li>
+            <li>$action.getText("setup.start.custom.wizard.bullet3")</li>
+        </ul>
+
+        <div class="aui-panel setup-start-buttons">
+            <input class="aui-button" type="submit" name="setupTypeCustom" value="$action.getText('setup.start.custom.start-setup')"/>
+        </div>
+    </div>
+#else
+    ## downgrade from cluster
+    <div class="aui-item welcome-div">
+        <h2>$action.getText("setup.start.cluster.downgrade.heading")</h2>
+        <div id="server-migration-info">
+            <p>$action.getText("setup.start.cluster.downgrade.wizard")</p>
+            <ul>
+                <li>$action.getText("setup.start.cluster.downgrade.wizard.bullet1")</li>
+                <li>$action.getText("setup.start.cluster.downgrade.wizard.bullet2")</li>
+            </ul>
+        </div>
+
+        #parse ("/template/includes/actionerrors.vm")
+
+        #if ($action.messageHolder.actionWarnings.size() == 0)
+            <div class="aui-panel setup-start-buttons">
+                <input class="aui-button" type="submit" name="setupTypeCustom" value="$action.getText('setup.start.cluster.downgrade.start-setup')"/>
+            </div>
+        #end
+    </div>
+#end

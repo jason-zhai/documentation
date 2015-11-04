@@ -1,0 +1,37 @@
+<div class="aui-item">
+    <img id="cluster-logo" src="$req.contextPath/images/logo/confluence_128_trans.png" alt="Confluence Data Center">
+
+    #if ($action.FromScratch)
+        <h2 id="cluster-logo-message">$action.getText("setup.start.cluster.heading")</h2>
+
+        <div class="buttons-container cluster-buttons bottom">
+            <div class="buttons">
+                <input class="aui-button" type="submit" name="setupTypeCustom" value="$action.getText('setup.start.custom.start-setup')"/>
+            </div>
+        </div>
+    #else
+        <h2 id="cluster-logo-message">$action.getText("setup.start.cluster.upgrade.heading")</h2>
+
+        <div id="cluster-migration-info">
+            <p>$action.getText("setup.start.cluster.upgrade.wizard")</p>
+            <ol>
+                <li>$action.getText("setup.start.cluster.upgrade.wizard.bullet2")</li>
+                <li>$action.getText("setup.start.cluster.upgrade.wizard.bullet3")</li>
+            </ol>
+            <p>$action.getText("setup.start.cluster.upgrade.instructions")</p>
+        </div>
+
+        #parse ("/template/includes/actionerrors.vm")
+
+        #if ($action.messageHolder.actionWarnings.size() == 0)
+            <div class="buttons-container cluster-buttons">
+                <div class="buttons">
+                    <input class="aui-button" type="submit" name="setupTypeCustom" value="$action.getText('setup.start.cluster.upgrade.start-setup')"/>
+                </div>
+            </div>
+        #end
+    #end
+
+
+
+</div>

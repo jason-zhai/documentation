@@ -1,0 +1,23 @@
+<html>
+<head>
+    <title>$action.getText("title.finish.setup")</title>
+    $webResourceManager.requireResourcesForContext("setup.setup-success")
+</head>
+
+<body>
+    #parse ("/setup/analytics-data.vm")
+    #parse ( "/template/includes/actionerrors.vm" )
+
+    #if ($actionErrors.size() == 0)
+    <p>
+        #if ($action.demonstrationContentInstalled)
+            <a href="$req.contextPath/display/ds/" class="finishAction" id="start-now">$action.getText('start.using.now')</a>
+        #else
+            <a href="$req.contextPath/" class="finishAction" id="start-now">$action.getText('start.using.now')</a>
+        #end
+        or continue with
+        <a href="$req.contextPath/admin/console.action" class="finishAction" id="further-configuration">$action.getText('setup.invite.users')</a>.
+    </p>
+    #end
+</body>
+</html>

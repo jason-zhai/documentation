@@ -1,0 +1,1 @@
+AJS.toInit(function(){$=AJS.$;$("#cluster-auto-address").change(function(){if($(this).is(":checked")){$("#cluster-address-field").slideUp()}else{$("#cluster-address-field").slideDown()}})});

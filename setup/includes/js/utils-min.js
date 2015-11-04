@@ -1,0 +1,1 @@
+define("confluence/setup/utils",["jquery"],function(b){function a(d){function f(h){var g=h?h.toLowerCase():"";if(g=="true"){return true}if(g=="false"){return false}return h}var c=b("meta[name='ajs-"+d+"']");var e=c.attr("content");return f(e)}return{getMeta:a}});

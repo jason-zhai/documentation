@@ -1,0 +1,1 @@
+require(["jquery","confluence/setup/setup-tracker"],function(b,a){b(function(){b(".finishAction").click(function(){var c=b(this).attr("id");a.insert(c)})})});

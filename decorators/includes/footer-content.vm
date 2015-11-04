@@ -1,0 +1,26 @@
+#* @vtlvariable name="licenseService" type="com.atlassian.confluence.license.LicenseService" *#
+
+<div id="footer" role="contentinfo">
+    <section class="footer-body">
+
+    <div class="footer-container">
+    <div class="head">© 2015 CliQr Technologies</div>
+        <div class="foot-menu">
+         <ul>
+            <li>
+              <a href="http://www.cliqr.com/company/news-events" target="_blank">News</a>
+            </li>
+            <li>|</li>
+            <li>
+              <a href="http://www.cliqr.com/support" target="_blank">Support</a>
+            </li>
+            <li>|</li>
+            <li>
+              <a href="http://www/cliqr.com/contact/" target="_blank">Contact</a>
+            </li>
+          </ul>
+        </div>
+    </div>
+  </section> 
+</div>
+    
