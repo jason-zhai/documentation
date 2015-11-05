@@ -706,8 +706,8 @@ label[for="search-filter-include-archived"] {
 }
 .select-style select {
     font-size: 14px;
-    font-weight: bold;
-    color: #0171b9;
+    font-weight: normal;
+    color: #2d2d2d;
     padding: 7px 10px;
     width: 100%;
     border: none;
