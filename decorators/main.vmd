@@ -745,6 +745,13 @@ var adjustMenu = function() {
                }
              }
            });
+           if (location.hash) {
+               var target = $(location.hash);
+               $('html,body').animate({
+                   scrollTop: target.offset().top - 70
+                 }, 1000);
+               return false;
+           }
 
            $(".select-style select").each(function () {
               $(this).val($(this).find('option[selected]').val());
