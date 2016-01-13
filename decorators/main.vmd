@@ -493,6 +493,9 @@ jQuery(document).ready(function() {
 
     }
 
+    var window_h = $(window).height();
+    var pan_height = window_h - 20;
+    $(".scroll-pane").css("height",pan_height);
 
     $( window ).resize(function() {
         var window_h = $(window).height();
