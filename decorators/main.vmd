@@ -239,7 +239,9 @@
                                         </div>
                                       </li>
                                   </ul>
-                                 #foreach( $s in $spaceManager.getAllSpaces() )
+                                 #set( $currentSpaceKey = $sitemeshPage.getProperty("page.spacekey") )
+                                 #set($currentSpace = $spaceManager.getSpace($currentSpaceKey))
+                                 #set( $s = $currentSpace )
                                  <ul>
                                     #if($!sitemeshPage.getProperty("page.spacekey") == $s.getKey())
                                       #if ($s.getName().indexOf(".") > 0 )
@@ -301,7 +303,6 @@
                                        </ul>
                                     </li>
                                  </ul>
-                                 #end
                               </div>
                            </div>
                         </div>
