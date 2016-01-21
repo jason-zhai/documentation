@@ -242,8 +242,8 @@
                                  #set( $currentSpaceKey = $sitemeshPage.getProperty("page.spacekey") )
                                  #set($currentSpace = $spaceManager.getSpace($currentSpaceKey))
                                  #set( $s = $currentSpace )
+                                 #foreach( $page in $s.getHomePage().getSortedChildren() )
                                  <ul>
-                                    #foreach( $page in $s.getHomePage().getSortedChildren() )
 
                                     #if($!sitemeshPage.getProperty("page.pageId") == $page.getContentId().asLong())
 
@@ -300,8 +300,8 @@
                                        #end <!-- end of if children -->
                                     </li>
 
-                                     #end <!--end of each-->
                                  </ul>
+                                 #end <!--end of each-->
                               </div>
                            </div>
                         </div>
