@@ -252,15 +252,12 @@
 
                                       <li class='has-sub top'>
                                          <a href=$s.getHomePage().getUrlPath()><span>$s.getName()</span></a>
-                                    
+
                                     #end
 
                                       <ul>
+                                        #foreach( $page in $s.getHomePage().getSortedChildren() )
 
-                                          #foreach( $page in $s.getHomePage().getSortedChildren() )
-                                          #set($exists = false)
-                                          #set($isExists = "#checkAncestors($pageManager.getPages($s,true) $page.getAncestors() $s)")
-                                          #if(!$exists)
                                           #if($!sitemeshPage.getProperty("page.pageId") == $page.getContentId().asLong())
                                             #if($page.hasChildren())
                                               <li class="has-sub open">
@@ -292,8 +289,8 @@
                                               #end
                                              </ul>
                                              #end
-                                             #end
-                                             #end
+
+                                         #end <!--end of each-->
                                        </ul>
                                     </li>
                                  </ul>
