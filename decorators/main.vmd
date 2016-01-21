@@ -243,20 +243,21 @@
                                  #set($currentSpace = $spaceManager.getSpace($currentSpaceKey))
                                  #set( $s = $currentSpace )
                                  <ul>
-                                    #if($!sitemeshPage.getProperty("page.spacekey") == $s.getKey())
+                                    #foreach( $page in $s.getHomePage().getSortedChildren() )
+
+                                    #if($!sitemeshPage.getProperty("page.pageId") == $page.getContentId().asLong())
 
                                       <li class='has-sub top open'>
-                                         <a href=$s.getHomePage().getUrlPath() class="current"><span>$s.getName()</span></a>
+                                         <a href=$page.getUrlPath() class="current"><span>$page.getTitle()</span></a>
 
                                     #else
 
                                       <li class='has-sub top'>
-                                         <a href=$s.getHomePage().getUrlPath()><span>$s.getName()</span></a>
+                                         <a href=$page.getUrlPath()><span>$page.getTitle()</span></a>
 
                                     #end
 
                                       <ul>
-                                        #foreach( $page in $s.getHomePage().getSortedChildren() )
 
                                           #if($!sitemeshPage.getProperty("page.pageId") == $page.getContentId().asLong())
                                             #if($page.hasChildren())
@@ -290,9 +291,10 @@
                                              </ul>
                                              #end
 
-                                         #end <!--end of each-->
                                        </ul>
                                     </li>
+
+                                     #end <!--end of each-->
                                  </ul>
                               </div>
                            </div>
