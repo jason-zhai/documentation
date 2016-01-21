@@ -261,7 +261,7 @@
                                       <ul>
                                         #foreach( $cp in $page.getSortedChildren()  )
 
-                                          #if($!sitemeshPage.getProperty("page.pageId") == $page.getContentId().asLong())
+                                          #if($!sitemeshPage.getProperty("page.pageId") == $cp.getContentId().asLong())
                                             #if($cp.hasChildren())
                                               <li class="has-sub open">
                                                 <span class='has-sub'><a class="close-expand-icon"></a></span>
