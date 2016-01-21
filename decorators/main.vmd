@@ -257,24 +257,26 @@
 
                                     #end
 
+                                      #if($page.hasChildren())
                                       <ul>
+                                        #foreach( $cp in $page.getSortedChildren()  )
 
                                           #if($!sitemeshPage.getProperty("page.pageId") == $page.getContentId().asLong())
-                                            #if($page.hasChildren())
+                                            #if($cp.hasChildren())
                                               <li class="has-sub open">
                                                 <span class='has-sub'><a class="close-expand-icon"></a></span>
                                             #else
                                               <li>
                                             #end
-                                             <a href=$page.getUrlPath() class="current"><span>$page.getTitle() </span></a>
+                                             <a href=$cp.getUrlPath() class="current"><span>$cp.getTitle() </span></a>
                                           #else
-                                            #if($page.hasChildren())
+                                            #if($cp.hasChildren())
                                               <li class="has-sub">
                                                 <span class='has-sub'><a class="close-expand-icon"></a></span>
                                             #else
                                               <li>
                                             #end
-                                             <a href=$page.getUrlPath()><span> $page.getTitle()</span></a>
+                                             <a href=$cp.getUrlPath()><span> $cp.getTitle()</span></a>
                                           #end
                                              #if($page.hasChildren())
                                              <ul>
@@ -291,7 +293,11 @@
                                              </ul>
                                              #end
 
+                                          #end <!--end of each-->
                                        </ul>
+                                       #else <!-- else of if children -->
+
+                                       #end <!-- end of if children -->
                                     </li>
 
                                      #end <!--end of each-->
