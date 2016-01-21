@@ -278,15 +278,15 @@
                                             #end
                                              <a href=$cp.getUrlPath()><span> $cp.getTitle()</span></a>
                                           #end
-                                             #if($page.hasChildren())
+                                             #if($cp.hasChildren())
                                              <ul>
-                                              #foreach( $cp in $page.getSortedChildren()  )
-                                                #if($!sitemeshPage.getProperty("page.pageId") == $cp.getContentId().asLong())
+                                              #foreach( $ccp in $cp.getSortedChildren()  )
+                                                #if($!sitemeshPage.getProperty("page.pageId") == $ccp.getContentId().asLong())
   						                                  <li>
-                                                   <a href=$cp.getUrlPath() class="current"><span>$cp.getTitle() </span></a>
+                                                   <a href=$ccp.getUrlPath() class="current"><span>$ccp.getTitle() </span></a>
                                                 #else
   						                                  <li>
-                                                   <a href=$cp.getUrlPath()><span>$cp.getTitle() </span></a>
+                                                   <a href=$ccp.getUrlPath()><span>$ccp.getTitle() </span></a>
                                                 #end
                                                 </li>
                                               #end
