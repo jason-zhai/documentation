@@ -235,9 +235,17 @@
 
                                  #set($cliSpace = $spaceManager.getSpace("CLI"))
 
+                                 #set($homeSpace = $spaceManager.getSpace("HOME"))
+
+                                 #set($latestSpace = $spaceManager.getSpace("CCD42"))
+
                                  #set($mySpaces = [$apiSpace, $cliSpace] )
 
-                                 #set($s = $currentSpace)
+                                #if($currentSpaceKey == "HOME")
+                                    #set($s = $latestSpace)
+                                #else
+                                    #set($s = $currentSpace)
+                                #end
                                   <ul>
                                       <li>
                                          <div class="select-style">
