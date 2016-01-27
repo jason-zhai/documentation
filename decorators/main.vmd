@@ -246,6 +246,8 @@
                                 #else
                                     #set($s = $currentSpace)
                                 #end
+                                  #if($currentSpaceKey == "OP")
+                                  #else
                                   <ul>
                                       <li>
                                          <div class="select-style">
@@ -261,6 +263,7 @@
                                         </div>
                                       </li>
                                   </ul>
+                                  #end
 
                                  #foreach( $page in $s.getHomePage().getSortedChildren() )
                                  <ul>
@@ -322,6 +325,8 @@
 
                                  </ul>
                                  #end <!--end of each-->
+                                 #if($currentSpaceKey == "OP")
+                                 #else
                                  #foreach( $s in $mySpaces )
                                  <ul>
                                     #if($!sitemeshPage.getProperty("page.spacekey") == $s.getKey())
@@ -384,6 +389,7 @@
                                        </ul>
                                     </li>
                                  </ul>
+                                 #end
                                  #end
                               </div>
                            </div>
