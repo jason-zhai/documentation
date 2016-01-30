@@ -275,7 +275,12 @@
 
                                     #else
 
-                                      <li class='has-sub top'>
+                                      <li class='
+                                      #if($page.hasChildren())
+                                      has-sub
+                                      #else
+                                      #end
+                                      top'>
                                          <a href=$page.getUrlPath()><span>$page.getTitle()</span></a>
 
                                     #end
