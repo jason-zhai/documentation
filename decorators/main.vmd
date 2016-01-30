@@ -325,7 +325,7 @@
 
                                  </ul>
                                  #end <!--end of each-->
-                                 #if($currentSpaceKey == "OP")
+                                 #if(($currentSpaceKey == "OP") || ($currentSpaceKey == "40API") || ($currentSpaceKey == "CLI"))
                                  #else
                                  #foreach( $s in $mySpaces )
                                  <ul>
