@@ -725,6 +725,12 @@ label[for="search-filter-include-archived"] {
 .select-style select::-ms-expand {
     display: none;
 }
+
+/* code block line wrap */
+.codeContent .syntaxhighlighter table td.code .container .line {
+    white-space: normal !important;
+}
+
 /* End custom styles for Confluence */
 
 #end
