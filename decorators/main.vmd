@@ -252,7 +252,7 @@
                                       <li>
                                          <div class="select-style">
                                           <select onchange="location = this.options[this.selectedIndex].value;">
-                                            <option value="http://docs.cliqr.com/display/CCD42/">Version 4.2/4.3</option>
+                                            <option value="http://docs.cliqr.com/display/CCD42/">Version 4.2/4.3/4.4</option>
                                             <option value="http://docs.cliqr.com/display/CCD40/"
                                             #if($currentSpaceKey == "CCD40")
                                              selected="selected"
