@@ -726,9 +726,13 @@ label[for="search-filter-include-archived"] {
     display: none;
 }
 
-/* code block line wrap */
+/* code block line wrap
+   table td word break for long text strings */
 .codeContent .syntaxhighlighter table td.code .container .line {
     white-space: normal !important;
+}
+.confluenceTd {
+    word-break: break-all;
 }
 
 /* End custom styles for Confluence */
