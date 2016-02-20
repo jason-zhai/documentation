@@ -246,24 +246,7 @@
                                 #else
                                     #set($s = $currentSpace)
                                 #end
-                                  #if($currentSpaceKey == "OP")
-                                  #else
-                                  <ul>
-                                      <li>
-                                         <div class="select-style">
-                                          <select onchange="location = this.options[this.selectedIndex].value;">
-                                            <option value="http://docs.cliqr.com/display/CCD42/">Version 4.2/4.3/4.4</option>
-                                            <option value="http://docs.cliqr.com/display/CCD40/"
-                                            #if($currentSpaceKey == "CCD40")
-                                             selected="selected"
-                                            #end
-                                            >Version 4.0/4.1</option>
-                                            <option value="http://docs-3x.cliqr.com/">Version 3.1/3.2</option>
-                                          </select>
-                                        </div>
-                                      </li>
-                                  </ul>
-                                  #end
+
 
                                  #foreach( $page in $s.getHomePage().getSortedChildren() )
                                  <ul>
@@ -330,72 +313,6 @@
 
                                  </ul>
                                  #end <!--end of each-->
-                                 #if(($currentSpaceKey == "OP") || ($currentSpaceKey == "40API") || ($currentSpaceKey == "CLI"))
-                                 #else
-                                 #foreach( $s in $mySpaces )
-                                 <ul>
-                                    #if($!sitemeshPage.getProperty("page.spacekey") == $s.getKey())
-                                      #if ($s.getName().indexOf(".") > 0 )
-                                      #set($index = $s.getName().indexOf(".")+1)
-                                      <li class='has-sub top open'><a href=$s.getHomePage().getUrlPath() class="current"><span>$s.getName().substring($index)</span></a>
-                                         #else
-                                      <li class='has-sub top open'>
-                                         <a href=$s.getHomePage().getUrlPath() class="current"><span>$s.getName()</span></a>
-                                         #end
-                                    #else
-                                      #if ($s.getName().indexOf(".") > 0 )
-                                      #set($index = $s.getName().indexOf(".")+1)
-                                      <li class='has-sub top'><a href=$s.getHomePage().getUrlPath()><span>$s.getName().substring($index)</span></a>
-                                         #else
-                                      <li class='has-sub top'>
-                                         <a href=$s.getHomePage().getUrlPath()><span>$s.getName()</span></a>
-                                         #end
-                                    #end
-
-                                  <ul>
-
-                                          #foreach( $page in $s.getHomePage().getSortedChildren() )
-                                          #set($exists = false)
-                                          #set($isExists = "#checkAncestors($pageManager.getPages($s,true) $page.getAncestors() $s)")
-                                          #if(!$exists)
-                                          #if($!sitemeshPage.getProperty("page.pageId") == $page.getContentId().asLong())
-                                            #if($page.hasChildren())
-                                              <li class="has-sub open">
-                                                <span class='has-sub'><a class="close-expand-icon"></a></span>
-                                            #else
-                                              <li>
-                                            #end
-                                             <a href=$page.getUrlPath() class="current"><span>$page.getTitle() </span></a>
-                                          #else
-                                            #if($page.hasChildren())
-                                              <li class="has-sub">
-                                                <span class='has-sub'><a class="close-expand-icon"></a></span>
-                                            #else
-                                              <li>
-                                            #end
-                                             <a href=$page.getUrlPath()><span> $page.getTitle()</span></a>
-                                          #end
-                                             #if($page.hasChildren())
-                                             <ul>
-                                              #foreach( $cp in $page.getSortedChildren()  )
-                                                #if($!sitemeshPage.getProperty("page.pageId") == $cp.getContentId().asLong())
-  						                                  <li>
-                                                   <a href=$cp.getUrlPath() class="current"><span>$cp.getTitle() </span></a>
-                                                #else
-  						                                  <li>
-                                                   <a href=$cp.getUrlPath()><span>$cp.getTitle() </span></a>
-                                                #end
-                                                </li>
-                                              #end
-                                             </ul>
-                                             #end
-                                             #end
-                                             #end
-                                       </ul>
-                                    </li>
-                                 </ul>
-                                 #end
-                                 #end
                               </div>
                            </div>
                         </div>
