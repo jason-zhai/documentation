@@ -1,9 +1,9 @@
 {
   "transport": "scp",
-  "hostname": "52.25.119.137",
+  "hostname": "52.23.237.96",
   "port": 22,
-  "username": "root",
-  "keyfile": "/Users/jasonzhai/.ssh/keys/cliqruserKey",
+  "username": "cliqruser",
+  "keyfile": "/Users/jasonzhai/.ssh/keys/jason",
   "target": "/datadir/atlassian-confluence-5.6.5/confluence/",
   "ignore": [
     ".git/**"
