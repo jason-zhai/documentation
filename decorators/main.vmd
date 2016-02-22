@@ -49,74 +49,7 @@
       <li><a href="#quick-search-query">$action.getText("assistive.skiplink.to.quick.search")</a></li>
    </ul>
    <div id="page">
-      #if((!$req.requestURL.toString().endsWith('editpage.actions')) && (!$req.requestURL.toString().endsWith('createpage.actions'))&& (!$req.requestURL.toString().endsWith('createpage-entervariables.action')))
-      <!-- \#CliQr Global Side-Bar -->
-      <a id="mobile-hamburger" class="mobile-menu-toggle" href="#toggle-menu">
-         <div></div>
-         <div></div>
-         <div></div>
-      </a>
-      <div id="side-menu">
-         <div class="scroll-pane">
-            <a href="http://www.cliqr.com/" id="menu-logo" class="closed-menu-logo menu-link" target="_blank">
-            <span class="image"></span>
-            </a>
-            <nav>
-               <ul>
-                  <li class="solutions-menu-li">
-                     <a class="solutions-menu-item" href="http://www.cliqr.com/solutions/" target="_blank">
-                     <span class="menu-icon solutions"></span>
-                     <span class="menu-item-text">Solutions</span>
-                     </a>
-                  </li>
-                  <li class="platform-menu-li">
-                     <a class="platform-menu-item" href="http://www.cliqr.com/platform/" target="_blank">
-                     <span class="menu-icon platform"></span>
-                     <span class="menu-item-text">Platform</span>
-                     </a>
-                  </li>
-                  <li class="company-menu-li">
-                     <a class="company-menu-item" href="http://www.cliqr.com/company/" target="_blank">
-                     <span class="menu-icon company"></span>
-                     <span class="menu-item-text">Company</span>
-                     </a>
-                  </li>
-                  <li class="partners-menu-li">
-                     <a class="partners-menu-item" href="http://www.cliqr.com/partners/" target="_blank">
-                     <span class="menu-icon partners"></span>
-                     <span class="menu-item-text">Partners</span>
-                     </a>
-                  </li>
-                  <li class="resources-menu-li">
-                     <a class="resources-menu-item" href="http://www.cliqr.com/resources/" target="_blank">
-                     <span class="menu-icon resources"></span>
-                     <span class="menu-item-text">Resources</span>
-                     </a>
-                  </li>
-                  <li class="blog-menu-li">
-                     <a class="blog-menu-item" href="http://www.cliqr.com/blog/" target="_blank">
-                     <span class="menu-icon blog"></span>
-                     <span class="menu-item-text">Blog</span>
-                     </a>
-                  </li>
-                  <li class="careers-menu-li">
-                     <a class="careers-menu-item" href="http://www.cliqr.com/careers/" target="_blank">
-                     <span class="menu-icon careers"></span>
-                     <span class="menu-item-text">Careers</span>
-                     </a>
-                  </li>
-                  <li class="docs-menu-li">
-                     <a class="active docs-menu-item" href="/display/">
-                     <span class="menu-icon docs"></span>
-                     <span class="menu-item-text">Docs</span>
-                     </a>
-                  </li>
-               </ul>
-            </nav>
-         </div>
-      </div>
-      <!-- \#CliQr Global Side-Bar -->
-      #end
+
       <div id="full-height-container">
          <div id="header-precursor">
             <div class="cell">

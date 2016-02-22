@@ -4,7 +4,6 @@
 /* Custom styles for Confluence (included for all themes by default) */
 /* testing */
 $action.style
-/* Custom styles for Confluence */
 
 body {
   background-color: #f8f8f8;
@@ -726,15 +725,9 @@ label[for="search-filter-include-archived"] {
     display: none;
 }
 
-/* code block line wrap
-   table td word break for long text strings */
-.codeContent .syntaxhighlighter table td.code .container .line {
-    white-space: normal !important;
+.ia-splitter .aui-page-panel {
+    margin-left: 40px !important;
+    margin-right: 40px !important;
 }
-.confluenceTd {
-    word-break: break-all;
-}
-
-/* End custom styles for Confluence */
 
 #end
