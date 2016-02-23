@@ -24,6 +24,86 @@
             "headerBeforeContent": $appswitcher.toString()
 })
 
+<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+			<div class="push-right-menu-content">
+            <a id="showRightPushMobile" class="mobile-close" href="javascript:void(0);"></a>
+            <a href="http://info.cliqr.com/request-a-demo" target="_blank" class="push-right-menu-demo">REQUEST A DEMO</a>
+
+    <ul>
+            <li class="solutions-menu-li sidemobile">
+          <a class=" solutions-menu-item" href="/solutions">Solutions          </a>
+      </li>
+              <li class="platform-menu-li sidemobile">
+          <a class=" platform-menu-item" href="/platform">Platform          </a>
+      </li>
+              <li class="company-menu-li sidemobile">
+          <a class=" company-menu-item" href="/company">Company          </a>
+      </li>
+              <li class="news-menu-li sidemobile">
+          <a class=" news-menu-item" href="/company/news-events">News          </a>
+      </li>
+              <li class="partners-menu-li ">
+          <a class=" partners-menu-item" href="/partners">Partners          </a>
+      </li>
+              <li class="resources-menu-li ">
+          <a class=" resources-menu-item" href="/resources">Resources          </a>
+      </li>
+              <li class="support-menu-li ">
+          <a class=" support-menu-item" href="/support">Support          </a>
+      </li>
+              <li class="blog-menu-li ">
+          <a class=" blog-menu-item" href="/blog">Blog          </a>
+      </li>
+              <li class="careers-menu-li ">
+          <a class=" careers-menu-item" href="/careers">Careers          </a>
+      </li>
+              <li class="docs-menu-li ">
+          <a class=" docs-menu-item" href="http://docs.cliqr.com">Docs          </a>
+      </li>
+              <li class="contact-menu-li ">
+          <a class=" contact-menu-item" href="/contact">Contact          </a>
+      </li>
+              <li class="portal-menu-li ">
+          <a class=" portal-menu-item" href="http://partners.cliqr.com/">Partner Portal          </a>
+      </li>
+              </ul>
+     <a href="#openModal" class="push-right-menu-informed">STAY INFORMED</a>
+     <a class="rightmenu-socialicon" href="http://www.linkedin.com/company/cliqr-technologies" target="_blank"><img src="/wp-content/themes/cliqr-website/images/social_icons/icon_linkedin.png" width="36" height="36" alt=""></a><a class="rightmenu-socialicon" href="https://www.youtube.com/user/CliQrTech" target="_blank"><img src="/wp-content/themes/cliqr-website/images/social_icons/icon_youtube.png" width="36" height="36" alt=""></a><a class="rightmenu-socialicon" href="http://twitter.com/cliqrtech" target="_blank"><img src="/wp-content/themes/cliqr-website/images/social_icons/icon_twitter.png" width="36" height="36" alt=""></a>
+<div style="width:180px; height:1px; background-color:#aaaaaa!important; margin-top:26px; margin-bottom:24px;margin-left:0px;"></div>
+     <section class="end-nav">
+     <p>© 2016 CliQr Technologies</p>
+     <p><a href="http://www.cliqr.com/company/legal/terms-of-service">Terms of Service</a></p>
+     <p><a href="http://www.cliqr.com/company/legal/privacy-policy">Privacy Policy</a></p>
+     <p><a href="http://www.cliqr.com/company/legal/use-policy">Use Policy</a></p>
+     </section>
+<!-- end menu content -->
+    </div>
+		</nav>
+<div id="topheadermenu" class="movetheheader" style="top: 0px;">
+<nav id="topmenu" class=""><div id="menucover"></div><a href="/"><img class="header-logo" src="/wp-content/themes/cliqr-website/images/CliQr Logo_2014.svg" height="100%" alt=""></a>
+         <ul>
+              <li class="solutions-menu-li topmenudesktop">
+          <a class=" solutions-menu-item" href="/solutions">Solutions          </a>
+        </li>
+                <li class="platform-menu-li topmenudesktop">
+          <a class=" platform-menu-item" href="/platform">Platform          </a>
+        </li>
+                <li class="company-menu-li topmenudesktop">
+          <a class=" company-menu-item" href="/company">Company          </a>
+        </li>
+                <li class="news-menu-li topmenudesktop">
+          <a class=" news-menu-item" href="/company/news-events">News          </a>
+        </li>
+                <li><a id="showRightPush" class="hamburgermenu" href="javascript:void(0);">
+  <div></div>
+  <div></div>
+  <div></div>
+</a></li>
+    </ul>
+  </nav>
+
+</div>
+
 <header id="header" role="banner">
     $soyTemplateRendererHelper.getRenderedTemplateHtml("com.atlassian.auiplugin:aui-experimental-soy-templates", "aui.page.header.soy", $templateParameters)
     <br class="clear">
