@@ -62,101 +62,7 @@
             </div>
          </div>
          #parse("/decorators/includes/common-header.vm")
-         <script src="https://cdnjs.cloudflare.com/ajax/libs/classie/1.0.1/classie.min.js"></script>
-<script>
-			var menuRight = document.getElementById( 'cbp-spmenu-s2' ),
-				showRightPush = document.getElementById( 'showRightPush' ),
-				topmenuheader = document.getElementById( 'topheadermenu' ),
-				showRightPushMobile = document.getElementById( 'showRightPushMobile' ),
-				wrapperclick = document.getElementById( 'wrapperclick' ),
-				body = document.body;
 
-			showRightPush.onclick = function(){
-				classie.toggle( this, 'active' );
-				classie.toggle( body, 'cbp-spmenu-push-toleft' );
-				classie.toggle( menuRight, 'cbp-spmenu-open' );
-				classie.toggle( topmenuheader, 'safari_only' );
-				disableOther( 'showRightPush' );
-
-			};
-
-showRightPushMobile.onclick = function() {
-				classie.toggle( this, 'active' );
-				classie.toggle( body, 'cbp-spmenu-push-toleft' );
-				classie.toggle( menuRight, 'cbp-spmenu-open' );
-				classie.toggle( topmenuheader, 'safari_only' );
-				disableOther( 'showRightPushMobile' );
-			};
-
-jQuery(document).ready(function(){
-    jQuery("#wrapperclick").click(function(){
-        jQuery("#cbp-spmenu-s2").removeClass("cbp-spmenu-open");
-		jQuery("#topheadermenu").removeClass("safari_only");
-		jQuery("body").removeClass("cbp-spmenu-push-toleft");
-    });
-
-	 jQuery("#menucover").click(function(){
-        jQuery("#cbp-spmenu-s2").removeClass("cbp-spmenu-open");
-		jQuery("#topheadermenu").removeClass("safari_only");
-		jQuery("body").removeClass("cbp-spmenu-push-toleft");
-    });
-
-});
-
-
-;( function ( document, window, index )
-	{
-		'use strict';
-		var elSelector		= '#topheadermenu',
-			elClassNarrow	= 'header--narrow',
-			elClassNoshad	= 'noshadow',
-			elNarrowOffset	= 100,
-			element			= document.querySelector( elSelector );
-		if( !element ) return true;
-		var elHeight		= 0,
-			elTop			= 0,
-			dHeight			= 0,
-			wHeight			= 0,
-			wScrollCurrent	= 0,
-			wScrollBefore	= 0,
-			wScrollDiff		= 0,
-			hasElementClass		= function( element, className ){ return element.classList ? element.classList.contains( className ) : new RegExp( '(^| )' + className + '( |$)', 'gi' ).test( element.className ); },
-			addElementClass		= function( element, className ){ element.classList ? element.classList.add( className ) : element.className += ' ' + className; },
-			removeElementClass	= function( element, className ){ element.classList ? element.classList.remove( className ) : element.className = element.className.replace( new RegExp( '(^|\\b)' + className.split( ' ' ).join( '|' ) + '(\\b|$)', 'gi' ), ' ' ); };
-		window.addEventListener( 'scroll', function()
-		{
-			elHeight		= element.offsetHeight;
-			dHeight			= document.body.offsetHeight;
-			wHeight			= window.innerHeight;
-			wScrollCurrent	= window.pageYOffset;
-			wScrollDiff		= wScrollBefore - wScrollCurrent;
-			elTop			= parseInt( window.getComputedStyle( element ).getPropertyValue( 'top' ) ) + wScrollDiff;
-			if( wScrollCurrent > elNarrowOffset ) { // toggles "narrow" classname
-				if( !hasElementClass( element, elClassNarrow ) )
-					addElementClass( element, elClassNarrow );
-			}
-			else {
-                removeElementClass( element, elClassNarrow );
-            }
-			if( wScrollCurrent <= 0 ) {// scrolled to the very top; element sticks to the top
-				element.style.top = '0px';
-            }
-			else if( wScrollDiff > 0 ) {// scrolled up; element slides in
-				element.style.top = ( elTop > 0 ? 0 : elTop ) + 'px';
-            }
-			else if( wScrollDiff < 0 ) {// scrolled down
-				if( wScrollCurrent + wHeight >= dHeight - elHeight )  {// scrolled to the very bottom; element slides in
-					element.style.top = ( ( elTop = wScrollCurrent + wHeight - dHeight ) < 0 ? elTop : 0 ) + 'px';
-                }
-				else {// scrolled down; element slides out
-					element.style.top = ( Math.abs( elTop ) > elHeight ? -elHeight : elTop ) + 'px';
-                    //console.log(Math.abs( elTop ) > elHeight ? -elHeight : elTop);
-                }
-			}
-			wScrollBefore = wScrollCurrent;
-		});
-	}( document, window, 0 ));
-		</script>
          #if($sitemeshPage.getProperty("page.tree"))
          #set($sidebarSettings = $studioSidebarHelper.getSettings($spaceKey))
          <div id="splitter">
@@ -831,5 +737,106 @@ var adjustMenu = function() {
 <script type="text/javascript">
    $( ".login-section:contains('Log in')" ).css( "margin-left", "70px" );
 </script>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/classie/1.0.1/classie.min.js"></script>
+<script>
+			var menuRight = document.getElementById( 'cbp-spmenu-s2' ),
+				showRightPush = document.getElementById( 'showRightPush' ),
+				topmenuheader = document.getElementById( 'topheadermenu' ),
+				showRightPushMobile = document.getElementById( 'showRightPushMobile' ),
+				wrapperclick = document.getElementById( 'wrapperclick' ),
+				body = document.body;
+
+			showRightPush.onclick = function(){
+				classie.toggle( this, 'active' );
+				classie.toggle( body, 'cbp-spmenu-push-toleft' );
+				classie.toggle( menuRight, 'cbp-spmenu-open' );
+				classie.toggle( topmenuheader, 'safari_only' );
+				disableOther( 'showRightPush' );
+
+			};
+
+showRightPushMobile.onclick = function() {
+				classie.toggle( this, 'active' );
+				classie.toggle( body, 'cbp-spmenu-push-toleft' );
+				classie.toggle( menuRight, 'cbp-spmenu-open' );
+				classie.toggle( topmenuheader, 'safari_only' );
+				disableOther( 'showRightPushMobile' );
+			};
+
+jQuery(document).ready(function(){
+    jQuery("#wrapperclick").click(function(){
+        jQuery("#cbp-spmenu-s2").removeClass("cbp-spmenu-open");
+		jQuery("#topheadermenu").removeClass("safari_only");
+		jQuery("body").removeClass("cbp-spmenu-push-toleft");
+    });
+
+	 jQuery("#menucover").click(function(){
+        jQuery("#cbp-spmenu-s2").removeClass("cbp-spmenu-open");
+		jQuery("#topheadermenu").removeClass("safari_only");
+		jQuery("body").removeClass("cbp-spmenu-push-toleft");
+    });
+
+});
+
+
+;( function ( document, window, index )
+	{
+		'use strict';
+		var elSelector		= '#topheadermenu',
+			elSideSelector	= '#main-right-menu',
+			elClassNarrow	= 'header--narrow',
+			elClassNoshad	= 'noshadow',
+			elNarrowOffset	= 100,
+			element			= document.querySelector( elSelector ),
+			elementSide		= document.querySelector( elSideSelector );
+		if( !element ) return true;
+		var elHeight		= 0,
+			elTop			= 0,
+			dHeight			= 0,
+			wHeight			= 0,
+			wScrollCurrent	= 0,
+			wScrollBefore	= 0,
+			wScrollDiff		= 0,
+			hasElementClass		= function( element, className ){ return element.classList ? element.classList.contains( className ) : new RegExp( '(^| )' + className + '( |$)', 'gi' ).test( element.className ); },
+			addElementClass		= function( element, className ){ element.classList ? element.classList.add( className ) : element.className += ' ' + className; },
+			removeElementClass	= function( element, className ){ element.classList ? element.classList.remove( className ) : element.className = element.className.replace( new RegExp( '(^|\\b)' + className.split( ' ' ).join( '|' ) + '(\\b|$)', 'gi' ), ' ' ); };
+		window.addEventListener( 'scroll', function()
+		{
+			elHeight		= element.offsetHeight;
+			dHeight			= document.body.offsetHeight;
+			wHeight			= window.innerHeight;
+			wScrollCurrent	= window.pageYOffset;
+			wScrollDiff		= wScrollBefore - wScrollCurrent;
+			elTop			= parseInt( window.getComputedStyle( element ).getPropertyValue( 'top' ) ) + wScrollDiff;
+			if( wScrollCurrent > elNarrowOffset ) { // toggles "narrow" classname
+				if( !hasElementClass( element, elClassNarrow ) )
+					addElementClass( element, elClassNarrow );
+			}
+			else {
+                removeElementClass( element, elClassNarrow );
+            }
+			if( wScrollCurrent <= 0 ) {// scrolled to the very top; element sticks to the top
+				element.style.top = '0px';
+                elementSide.style.top = '192px';
+            }
+			else if( wScrollDiff > 0 ) {// scrolled up; element slides in
+				element.style.top = ( elTop > 0 ? 0 : elTop ) + 'px';
+				elementSide.style.top = ( elTop > 0 ? 153 : (53 + 80 + elTop) ) + 'px';
+            }
+			else if( wScrollDiff < 0 ) {// scrolled down
+				if( wScrollCurrent + wHeight >= dHeight - elHeight )  {// scrolled to the very bottom; element slides in
+					element.style.top = ( ( elTop = wScrollCurrent + wHeight - dHeight ) < 0 ? elTop : 0 ) + 'px';
+					elementSide.style.top = '152px';
+                }
+				else {// scrolled down; element slides out
+					element.style.top = ( Math.abs( elTop ) > elHeight ? -elHeight : elTop ) + 'px';
+					elementSide.style.top = '53px';
+                    //console.log(Math.abs( elTop ) > elHeight ? -elHeight : elTop);
+                }
+			}
+			wScrollBefore = wScrollCurrent;
+		});
+	}( document, window, 0 ));
+		</script>
    </body>
 </html>
