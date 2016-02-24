@@ -339,8 +339,6 @@
               </div>
             </div>
             #end
-            #set ($footerContext = {'spaceKey': $!spaceKey})
-            #webPanelForLocation("atl.footer" $footerContext)
             #if ($useNewSpaceIA && $sitemeshPage.getProperty("page.ia-sidebar"))
          </div>
          #end
@@ -348,6 +346,8 @@
       <!-- \#full-height-container -->
    </div>
    <!-- \#page -->
+            #set ($footerContext = {'spaceKey': $!spaceKey})
+            #webPanelForLocation("atl.footer" $footerContext)
    <ul>
        <li class="dpdwn" id="append_menu" style="display:none;">
           <a href="#"><span>Spaces</span></a>

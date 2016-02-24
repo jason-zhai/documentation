@@ -1160,4 +1160,87 @@ btn.btn-orange-modal:hover {
 body, #page, #full-height-container {
     height: auto !important;
 }
+
+footer.main-footer {
+	color: #708895;
+	font-size: 10px;
+	text-transform: none;
+	text-align: center;
+	background-repeat: no-repeat;
+	background-position: center bottom;
+	padding-top: 160px;
+	padding-bottom: 160px;
+	background-color: #f6f6f6!important;
+    margin-top: -320px;
+	@media (max-width: 801px) {
+	background-image: url("http://www-dev.cliqr.com/wp-content/themes/cliqr-website/images/footer/bg_footer_cloud_1600.png");}
+}
+
+@media (min-width: 1600px) {
+	footer.main-footer {background-image: url("http://www-dev.cliqr.com/wp-content/themes/cliqr-website/images/footer/bg_footer_cloud_2400.png")!important;}}
+@media (min-width: 801px) {
+	footer.main-footer {
+	background-image: url("http://www-dev.cliqr.com/wp-content/themes/cliqr-website/images/footer/bg_footer_cloud_1600.png");}
+}
+@media (min-width: 401px) and (max-width: 800px) {
+	footer.main-footer {background-image: url("http://www-dev.cliqr.com/wp-content/themes/cliqr-website/images/footer/bg_footer_cloud_800.png");}
+}
+@media (max-width: 400px) {
+	footer.main-footer {background-image: url("http://www-dev.cliqr.com/wp-content/themes/cliqr-website/images/footer/bg_footer_cloud_400.png");}
+}
+.demo-title{font-size:48px; color:#555!important; font-weight:300;}
+      .demo-button{margin-top:60px;width:240px;text-align:center; margin-right:auto; margin-left:auto;}
+	  a.footer-demo-button {text-align:center;
+	width:240px;height:auto;-webkit-border-radius: 3px;-moz-border-radius: 3px;border-radius: 3px;background-color:#F28B00;
+	display:block; padding-top:7px;padding-bottom:3px; height:40px;
+	color:#fff!important; text-decoration:none; font-size:18px;
+}
+     .footer-social{margin-top:420px; text-align:center;}
+      .footer-links{margin-top:40px; color:#7f7f7f;font-size:16px; font-weight:300px;}
+	   .footer-links a{color:#7f7f7f; padding-left:10px; padding-right:10px;}
+footer.main-footer p,
+footer.main-footer ul,
+footer.main-footer li {
+  margin: 0;
+}
+@media (min-width: 992px) {
+  footer.main-footer {
+    text-align: center;
+  }
+  footer.main-footer .copyright-info {
+    padding-left: 45px;
+    text-align: left;
+  }
+}
+footer.main-footer nav {
+  margin-bottom: 2em;
+}
+footer.main-footer nav a {
+  color: #CFDAE0;
+  display: block;
+  padding: 0.25em 1em;
+}
+@media (min-width: 992px) {
+  footer.main-footer nav {
+    margin-bottom: 0;
+    padding-right: 35px;
+  }
+  footer.main-footer nav a {
+    display: inline;
+    padding: 0;
+  }
+  footer.main-footer nav li {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+  }
+  footer.main-footer nav li:before {
+    content: '|';
+    padding: 0 0.75em;
+  }
+  footer.main-footer nav li:first-child:before {
+    display: none;
+  }
+}
+
 #end
