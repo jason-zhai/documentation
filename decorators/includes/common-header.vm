@@ -79,8 +79,8 @@
 <!-- end menu content -->
     </div>
 		</nav>
-<div id="topheadermenu" class="movetheheader" style="top: 0px;">
-<nav id="topmenu" class=""><div id="menucover"></div><a href="/"><img class="header-logo" src="/wp-content/themes/cliqr-website/images/CliQr Logo_2014.svg" height="100%" alt=""></a>
+<div id="topheadermenu" class="movetheheader">
+<nav id="topmenu" class=""><div id="menucover"></div><a href="/"><img class="header-logo" src="http://www-dev.cliqr.com/wp-content/themes/cliqr-website/images/CliQr%20Logo_2014.svg" height="100%" alt=""></a>
          <ul>
               <li class="solutions-menu-li topmenudesktop">
           <a class=" solutions-menu-item" href="/solutions">Solutions          </a>
@@ -101,10 +101,10 @@
 </a></li>
     </ul>
   </nav>
-
-</div>
-
-<header id="header" role="banner">
+<header id="header" role="banner" style="position: absolute; bottom: -50px;">
     $soyTemplateRendererHelper.getRenderedTemplateHtml("com.atlassian.auiplugin:aui-experimental-soy-templates", "aui.page.header.soy", $templateParameters)
     <br class="clear">
 </header>
+</div>
+
+
