@@ -820,20 +820,31 @@ jQuery(document).ready(function(){
                 elementSide.style.top = '192px';
             }
 			else if( wScrollDiff > 0 ) {// scrolled up; element slides in
-				element.style.top = ( elTop > 0 ? 0 : elTop ) + 'px';
-				elementSide.style.top = ( elTop > 0 ? 153 : (53 + 80 + elTop) ) + 'px';
+				//element.style.top = ( elTop > 0 ? 0 : elTop ) + 'px';
+				//elementSide.style.top = ( elTop > 0 ? 153 : (53 + 80 + elTop) ) + 'px';
+					    elementSide.style.bottom = ( wScrollCurrent + wHeight - 4226 ) + 'px';
+                if(wScrollCurrent < 3235) {
+					    elementSide.style.bottom = '10px';
+					    elementSide.style.top = '53px';
+                        console.log(wScrollCurrent + wHeight - 4226);
+                }
             }
 			else if( wScrollDiff < 0 ) {// scrolled down
 				if( wScrollCurrent + wHeight >= dHeight - elHeight )  {// scrolled to the very bottom; element slides in
-					element.style.top = ( ( elTop = wScrollCurrent + wHeight - dHeight ) < 0 ? elTop : 0 ) + 'px';
-					elementSide.style.top = '152px';
+					//element.style.top = ( ( elTop = wScrollCurrent + wHeight - dHeight ) < 0 ? elTop : 0 ) + 'px';
                 }
 				else {// scrolled down; element slides out
 					element.style.top = ( Math.abs( elTop ) > elHeight ? -elHeight : elTop ) + 'px';
 					elementSide.style.top = '53px';
                     //console.log(Math.abs( elTop ) > elHeight ? -elHeight : elTop);
+
                 }
 			}
+            if(wScrollCurrent > 3235) { //locking the main right menu
+					    elementSide.style.bottom = ( wScrollCurrent + wHeight - 4226 ) + 'px';
+					    elementSide.style.top = '-' + ( wScrollCurrent + wHeight - 4226 ) + 'px';
+                        console.log(wScrollCurrent + wHeight - 4226);
+                    }
 			wScrollBefore = wScrollCurrent;
 		});
 	}( document, window, 0 ));

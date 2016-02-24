@@ -341,7 +341,6 @@ pre {
   bottom: 12px;
   top: 53px;
   width: 300px;
-  transition: bottom 0.5s;
 }
 #main-right-menu.atBottom {
   bottom: 89px;
