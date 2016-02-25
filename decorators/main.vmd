@@ -821,6 +821,10 @@ jQuery(document).ready(function(){
 					    elementSide.style.bottom = '10px';
 					    elementSide.style.top = '53px';
                 }
+                if(wScrollCurrent < 130) { //element slides in near the top
+                    element.style.top = ( elTop > 0 ? 0 : elTop ) + 'px';
+                    elementSide.style.top = ( elTop > 0 ? 182 : 182 - wScrollCurrent ) + 'px';
+                }
             }
 			else if( wScrollDiff < 0 ) {// scrolled down
 				if( wScrollCurrent + wHeight >= dHeight - elHeight )  {// scrolled to the very bottom; element slides in
@@ -828,7 +832,7 @@ jQuery(document).ready(function(){
                 }
 				else {// scrolled down; element slides out
 					element.style.top = ( Math.abs( elTop ) > elHeight ? -elHeight : elTop ) + 'px';
-					elementSide.style.top = ( Math.abs( elTop ) > elHeight ? 60 : ( elTop + 182 )  ) + 'px';
+					elementSide.style.top = ( wScrollCurrent < 130 ? (  182 - wScrollCurrent ) : 60  ) + 'px';
                     //console.log(Math.abs( elTop ) > elHeight ? -elHeight : elTop);
 
                 }

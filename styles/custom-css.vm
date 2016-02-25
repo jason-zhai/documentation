@@ -1241,5 +1241,11 @@ footer.main-footer nav a {
     display: none;
   }
 }
+#full-height-container, #main {
+    background-color: transparent !important;
+}
+body {
+    background-color: #f6f6f6 !important;
+}
 
 #end
