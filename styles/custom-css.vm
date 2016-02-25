@@ -731,7 +731,9 @@ label[for="search-filter-include-archived"] {
 .codeContent .syntaxhighlighter table td.code .container .line {
     white-space: normal !important;
 }
-.confluenceTd {
+
+/* long string word */
+.confluenceTd .wordBreakAll {
     word-break: break-all;
 }
 
