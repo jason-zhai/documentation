@@ -808,13 +808,7 @@ jQuery(document).ready(function(){
 			wScrollCurrent	= window.pageYOffset;
 			wScrollDiff		= wScrollBefore - wScrollCurrent;
 			elTop			= parseInt( window.getComputedStyle( element ).getPropertyValue( 'top' ) ) + wScrollDiff;
-			if( wScrollCurrent > elNarrowOffset ) { // toggles "narrow" classname
-				if( !hasElementClass( element, elClassNarrow ) )
-					addElementClass( element, elClassNarrow );
-			}
-			else {
-                removeElementClass( element, elClassNarrow );
-            }
+
 			if( wScrollCurrent <= 0 ) {// scrolled to the very top; element sticks to the top
 				element.style.top = '0px';
                 elementSide.style.top = '192px';
@@ -826,7 +820,6 @@ jQuery(document).ready(function(){
                 if(wScrollCurrent < 3235) {
 					    elementSide.style.bottom = '10px';
 					    elementSide.style.top = '53px';
-                        console.log(wScrollCurrent + wHeight - 4226);
                 }
             }
 			else if( wScrollDiff < 0 ) {// scrolled down
@@ -835,7 +828,7 @@ jQuery(document).ready(function(){
                 }
 				else {// scrolled down; element slides out
 					element.style.top = ( Math.abs( elTop ) > elHeight ? -elHeight : elTop ) + 'px';
-					elementSide.style.top = '53px';
+					elementSide.style.top = ( Math.abs( elTop ) > elHeight ? 60 : ( elTop + 182 )  ) + 'px';
                     //console.log(Math.abs( elTop ) > elHeight ? -elHeight : elTop);
 
                 }
@@ -843,7 +836,6 @@ jQuery(document).ready(function(){
             if(wScrollCurrent > 3235) { //locking the main right menu
 					    elementSide.style.bottom = ( wScrollCurrent + wHeight - 4226 ) + 'px';
 					    elementSide.style.top = '-' + ( wScrollCurrent + wHeight - 4226 ) + 'px';
-                        console.log(wScrollCurrent + wHeight - 4226);
                     }
 			wScrollBefore = wScrollCurrent;
 		});

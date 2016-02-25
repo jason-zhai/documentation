@@ -79,7 +79,7 @@
 <!-- end menu content -->
     </div>
 		</nav>
-<div id="topheadermenu" class="movetheheader">
+<div id="topheadermenu" class="movetheheader header--narrow">
 <nav id="topmenu" class=""><div id="menucover"></div><a href="/"><img class="header-logo" src="http://www-dev.cliqr.com/wp-content/themes/cliqr-website/images/CliQr%20Logo_2014.svg" height="100%" alt=""></a>
          <ul>
               <li class="solutions-menu-li topmenudesktop">
