@@ -248,21 +248,24 @@
                                 #end
                                   #if($currentSpaceKey == "OP")
                                   #else
-                                  <ul>
-                                      <li>
-                                         <div class="select-style">
-                                          <select onchange="location = this.options[this.selectedIndex].value;">
-                                            <option value="http://docs.cliqr.com/display/CCD42/">Version 4.2/4.3/4.4</option>
-                                            <option value="http://docs.cliqr.com/display/CCD40/"
-                                            #if($currentSpaceKey == "CCD40")
-                                             selected="selected"
-                                            #end
-                                            >Version 4.0/4.1</option>
-                                            <option value="http://docs-3x.cliqr.com/">Version 3.1/3.2</option>
-                                          </select>
-                                        </div>
-                                      </li>
-                                  </ul>
+                                      <ul>
+                                          <li>
+                                             <div class="select-style">
+                                              <select onchange="location = this.options[this.selectedIndex].value;">
+                                                #if(($currentSpaceKey == "FAQ") || ($currentSpaceKey == "40API") || ($currentSpaceKey == "CLI"))
+                                                    <option>CloudCenter Documentation</option>
+                                                #end
+                                                <option value="http://docs.cliqr.com/display/CCD42/">Version 4.2/4.3/4.4</option>
+                                                <option value="http://docs.cliqr.com/display/CCD40/"
+                                                #if($currentSpaceKey == "CCD40")
+                                                 selected="selected"
+                                                #end
+                                                >Version 4.0/4.1</option>
+                                                <option value="http://docs-3x.cliqr.com/">Version 3.1/3.2</option>
+                                              </select>
+                                            </div>
+                                          </li>
+                                      </ul>
                                   #end
 
                                  #foreach( $page in $s.getHomePage().getSortedChildren() )
@@ -330,7 +333,7 @@
 
                                  </ul>
                                  #end <!--end of each-->
-                                 #if(($currentSpaceKey == "OP") || ($currentSpaceKey == "40API") || ($currentSpaceKey == "CLI"))
+                                 #if(($currentSpaceKey == "OP") || ($currentSpaceKey == "FAQ") || ($currentSpaceKey == "40API") || ($currentSpaceKey == "CLI"))
                                  #else
                                  #foreach( $s in $mySpaces )
                                  <ul>
