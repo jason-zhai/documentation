@@ -837,10 +837,10 @@ jQuery(document).ready(function(){
 
                 }
 			}
-            if(wScrollCurrent > 3235) { //locking the main right menu
-					    elementSide.style.bottom = ( wScrollCurrent + wHeight - 4226 ) + 'px';
-					    elementSide.style.top = '-' + ( wScrollCurrent + wHeight - 4226 ) + 'px';
-                    }
+            if(( dHeight - wScrollCurrent - wHeight) < 533) { //locking the main right menu
+			    elementSide.style.bottom = (533 + ( wScrollCurrent + wHeight - dHeight)) + 'px';
+			    elementSide.style.top = '-' + (533 + ( wScrollCurrent + wHeight - dHeight)) + 'px';
+            }
 			wScrollBefore = wScrollCurrent;
 		});
 	}( document, window, 0 ));
