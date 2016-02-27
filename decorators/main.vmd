@@ -816,14 +816,14 @@ jQuery(document).ready(function(){
 			else if( wScrollDiff > 0 ) {// scrolled up; element slides in
 				//element.style.top = ( elTop > 0 ? 0 : elTop ) + 'px';
 				//elementSide.style.top = ( elTop > 0 ? 153 : (53 + 80 + elTop) ) + 'px';
-					    elementSide.style.bottom = ( wScrollCurrent + wHeight - 4226 ) + 'px';
-                if(wScrollCurrent < 3235) {
-					    elementSide.style.bottom = '10px';
-					    elementSide.style.top = '53px';
+                if((- ( 533 + wScrollCurrent + wHeight - dHeight )) < 53) {
+
+    			    elementSide.style.top = (- ( 533 + wScrollCurrent + wHeight - dHeight )) + 'px';
+
                 }
                 if(wScrollCurrent < 130) { //element slides in near the top
                     element.style.top = ( elTop > 0 ? 0 : elTop ) + 'px';
-                    elementSide.style.top = ( elTop > 0 ? 182 : 182 - wScrollCurrent ) + 'px';
+                    elementSide.style.top = ( 192 - wScrollCurrent ) + 'px';
                 }
             }
 			else if( wScrollDiff < 0 ) {// scrolled down
