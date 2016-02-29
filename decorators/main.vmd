@@ -832,14 +832,16 @@ jQuery(document).ready(function(){
                 }
 				else {// scrolled down; element slides out
 					element.style.top = ( Math.abs( elTop ) > elHeight ? -elHeight : elTop ) + 'px';
-					elementSide.style.top = ( wScrollCurrent < 130 ? (  182 - wScrollCurrent ) : 60  ) + 'px';
+					elementSide.style.top = ( wScrollCurrent < 130 ? (  192 - wScrollCurrent ) : 60  ) + 'px';
                     //console.log(Math.abs( elTop ) > elHeight ? -elHeight : elTop);
 
                 }
 			}
             if(( dHeight - wScrollCurrent - wHeight) < 533) { //locking the main right menu
-			    elementSide.style.bottom = (533 + ( wScrollCurrent + wHeight - dHeight)) + 'px';
+			    elementSide.style.bottom = (558 + ( wScrollCurrent + wHeight - dHeight)) + 'px';
 			    elementSide.style.top = '-' + (533 + ( wScrollCurrent + wHeight - dHeight)) + 'px';
+            } else {
+			    elementSide.style.bottom = '8px';
             }
 			wScrollBefore = wScrollCurrent;
 		});
