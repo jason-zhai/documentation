@@ -3,9 +3,9 @@
 <footer class="main-footer container-fluid">
 	<div class="row">
 		<div class="footer-social">
-			<a href="http://www.linkedin.com/company/cliqr-technologies" target="_blank"><img src="/wp-content/themes/cliqr-website/images/social_icons/icon_linkedin.png" width="36" height="36" alt=""></a>
-			<a href="https://www.youtube.com/user/CliQrTech" target="_blank"><img src="/wp-content/themes/cliqr-website/images/social_icons/icon_youtube.png" width="36" height="36" alt="" style="margin-right:40px;margin-left:40px;"></a>
-			<a href="http://twitter.com/cliqrtech" target="_blank"><img src="/wp-content/themes/cliqr-website/images/social_icons/icon_twitter.png" width="36" height="36" alt=""></a>
+			<a href="http://www.linkedin.com/company/cliqr-technologies" target="_blank"><img src="http://www-dev.cliqr.com/wp-content/themes/cliqr-website/images/social_icons/icon_linkedin.png" width="36" height="36" alt=""></a>
+			<a href="https://www.youtube.com/user/CliQrTech" target="_blank"><img src="http://www-dev.cliqr.com/wp-content/themes/cliqr-website/images/social_icons/icon_youtube.png" width="36" height="36" alt="" style="margin-right:40px;margin-left:40px;"></a>
+			<a href="http://twitter.com/cliqrtech" target="_blank"><img src="http://www-dev.cliqr.com/wp-content/themes/cliqr-website/images/social_icons/icon_twitter.png" width="36" height="36" alt=""></a>
 		</div>
 		<div class="footer-links">© 2016 CliQr Technology. All rights reserved.
 			<br style="clear:both;">

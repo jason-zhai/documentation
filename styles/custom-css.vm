@@ -339,7 +339,7 @@ pre {
   overflow-y: auto;
   position: fixed;
   bottom: 12px;
-  top: 53px;
+  top: 192px;
   width: 300px;
 }
 #main-right-menu.atBottom {
@@ -1254,6 +1254,9 @@ body {
 .login #main.aui-page-panel {
     margin: 0 auto !important;
     background-color: #fff !important;
+}
+.cbp-spmenu .end-nav p {
+    color: #5A7685 !important;
 }
 
 #end
