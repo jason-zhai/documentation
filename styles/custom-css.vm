@@ -5,8 +5,20 @@
 /* testing */
 $action.style
 
+@import url(https://fonts.googleapis.com/css?family=Lato:700,400,400italic,700italic);
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+    font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
 body {
   background-color: #f8f8f8;
+  -webkit-font-smoothing: antialiased;
 }
 #navigation {
   margin-bottom: -15px;
@@ -829,7 +841,7 @@ nav#topmenu img.header-logo{margin-left: -23px!important;}
 .loadopen {cursor:pointer;}
 #topheadermenu #topmenu ul{list-style:none;
 	font-size:16px; font-weight:700; text-transform: uppercase; position:absolute; top:48px; right:0px;}
-	#topheadermenu.header--narrow #topmenu ul{top:28px!important;}
+	#topheadermenu.header--narrow #topmenu ul{top:18px!important;}
 	#topheadermenu.header--narrow #topmenu .header-logo {margin-top:20px;}
 	#topheadermenu #topmenu li{float:left; display:block; padding-left:50px;}
 	#topheadermenu #topmenu li a{color:#333;}
