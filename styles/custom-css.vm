@@ -1270,5 +1270,20 @@ body {
 .cbp-spmenu .end-nav p {
     color: #5A7685 !important;
 }
+.cbp-spmenu-right.cbp-spmenu-open {
+    right: -20px;
+    width: 340px;
+}
+footer.main-footer {
+    margin-bottom: -18px;
+}
+@media screen and (max-width: 1024px) {
+    .login #main.aui-page-panel {
+        top: 40px;
+    }
+    #main-content-container {
+        margin-top: 81px;
+    }
+}
 
 #end
