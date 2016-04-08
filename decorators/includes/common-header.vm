@@ -31,37 +31,37 @@
 
     <ul>
             <li class="solutions-menu-li sidemobile">
-          <a class=" solutions-menu-item" href="/solutions">Solutions          </a>
+          <a class=" solutions-menu-item" href="http://www.cliqr.com/solutions">Solutions          </a>
       </li>
               <li class="platform-menu-li sidemobile">
-          <a class=" platform-menu-item" href="/platform">Platform          </a>
+          <a class=" platform-menu-item" href="http://www.cliqr.com/platform">Platform          </a>
       </li>
               <li class="company-menu-li sidemobile">
-          <a class=" company-menu-item" href="/company">Company          </a>
+          <a class=" company-menu-item" href="http://www.cliqr.com/company">Company          </a>
       </li>
               <li class="news-menu-li sidemobile">
-          <a class=" news-menu-item" href="/company/news-events">News          </a>
+          <a class=" news-menu-item" href="http://www.cliqr.com/company/news-events">News          </a>
       </li>
               <li class="partners-menu-li ">
-          <a class=" partners-menu-item" href="/partners">Partners          </a>
+          <a class=" partners-menu-item" href="http://www.cliqr.com/partners">Partners          </a>
       </li>
               <li class="resources-menu-li ">
-          <a class=" resources-menu-item" href="/resources">Resources          </a>
+          <a class=" resources-menu-item" href="http://www.cliqr.com/resources">Resources          </a>
       </li>
               <li class="support-menu-li ">
-          <a class=" support-menu-item" href="/support">Support          </a>
+          <a class=" support-menu-item" href="http://www.cliqr.com/support">Support          </a>
       </li>
               <li class="blog-menu-li ">
-          <a class=" blog-menu-item" href="/blog">Blog          </a>
+          <a class=" blog-menu-item" href="http://www.cliqr.com/blog">Blog          </a>
       </li>
               <li class="careers-menu-li ">
-          <a class=" careers-menu-item" href="/careers">Careers          </a>
+          <a class=" careers-menu-item" href="http://www.cliqr.com/careers">Careers          </a>
       </li>
               <li class="docs-menu-li ">
           <a class=" docs-menu-item" href="http://docs.cliqr.com">Docs          </a>
       </li>
               <li class="contact-menu-li ">
-          <a class=" contact-menu-item" href="/contact">Contact          </a>
+          <a class=" contact-menu-item" href="http://www.cliqr.com/contact">Contact          </a>
       </li>
               <li class="portal-menu-li ">
           <a class=" portal-menu-item" href="http://partners.cliqr.com/">Partner Portal          </a>
@@ -80,19 +80,19 @@
     </div>
 		</nav>
 <div id="topheadermenu" class="movetheheader header--narrow">
-<nav id="topmenu" class=""><div id="menucover"></div><a href="/"><img class="header-logo" src="http://www-dev.cliqr.com/wp-content/themes/cliqr-website/images/CliQr%20Logo_2014.svg" height="100%" alt=""></a>
+<nav id="topmenu" class=""><div id="menucover"></div><a href="http://www.cliqr.com/"><img class="header-logo" src="http://www-dev.cliqr.com/wp-content/themes/cliqr-website/images/CliQr%20Logo_2014.svg" height="100%" alt=""></a>
          <ul>
               <li class="solutions-menu-li topmenudesktop">
-          <a class=" solutions-menu-item" href="/solutions">Solutions          </a>
+          <a class=" solutions-menu-item" href="http://www.cliqr.com/solutions">Solutions          </a>
         </li>
                 <li class="platform-menu-li topmenudesktop">
-          <a class=" platform-menu-item" href="/platform">Platform          </a>
+          <a class=" platform-menu-item" href="http://www.cliqr.com/platform">Platform          </a>
         </li>
                 <li class="company-menu-li topmenudesktop">
-          <a class=" company-menu-item" href="/company">Company          </a>
+          <a class=" company-menu-item" href="http://www.cliqr.com/company">Company          </a>
         </li>
                 <li class="news-menu-li topmenudesktop">
-          <a class=" news-menu-item" href="/company/news-events">News          </a>
+          <a class=" news-menu-item" href="http://www.cliqr.com/company/news-events">News          </a>
         </li>
                 <li><a id="showRightPush" class="hamburgermenu" href="javascript:void(0);">
   <div></div>
