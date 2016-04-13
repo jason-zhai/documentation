@@ -18,7 +18,7 @@
 		#end
 	</head>
 	<body>
-
+		
         <content tag="bodyClass">login</content>
 		#if($showSignup)
 		#requireResource("confluence.web.resources:signup")
@@ -153,47 +153,5 @@
                 </ul>
             </content>
         #end
-         <script src="https://cdnjs.cloudflare.com/ajax/libs/classie/1.0.1/classie.min.js"></script>
-		<script>
-		$('body').addClass('cbp-spmenu-push');
-					var menuRight = document.getElementById( 'cbp-spmenu-s2' ),
-						showRightPush = document.getElementById( 'showRightPush' ),
-						topmenuheader = document.getElementById( 'topheadermenu' ),
-						showRightPushMobile = document.getElementById( 'showRightPushMobile' ),
-						wrapperclick = document.getElementById( 'wrapperclick' ),
-						body = document.body;
-
-					showRightPush.onclick = function(){
-						classie.toggle( this, 'active' );
-						classie.toggle( body, 'cbp-spmenu-push-toleft' );
-						classie.toggle( menuRight, 'cbp-spmenu-open' );
-						classie.toggle( topmenuheader, 'safari_only' );
-						disableOther( 'showRightPush' );
-
-					};
-
-		showRightPushMobile.onclick = function() {
-						classie.toggle( this, 'active' );
-						classie.toggle( body, 'cbp-spmenu-push-toleft' );
-						classie.toggle( menuRight, 'cbp-spmenu-open' );
-						classie.toggle( topmenuheader, 'safari_only' );
-						disableOther( 'showRightPushMobile' );
-					};
-
-		jQuery(document).ready(function(){
-		    jQuery("#wrapperclick").click(function(){
-		        jQuery("#cbp-spmenu-s2").removeClass("cbp-spmenu-open");
-				jQuery("#topheadermenu").removeClass("safari_only");
-				jQuery("body").removeClass("cbp-spmenu-push-toleft");
-		    });
-
-			 jQuery("#menucover").click(function(){
-		        jQuery("#cbp-spmenu-s2").removeClass("cbp-spmenu-open");
-				jQuery("#topheadermenu").removeClass("safari_only");
-				jQuery("body").removeClass("cbp-spmenu-push-toleft");
-		    });
-
-		});
-		</script>
 	</body>
 </html>
