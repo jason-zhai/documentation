@@ -725,17 +725,12 @@ label[for="search-filter-include-archived"] {
 .select-style select::-ms-expand {
     display: none;
 }
-
-/* code block line wrap
-   table td word break for long text strings */
-.codeContent .syntaxhighlighter table td.code .container .line {
-    white-space: normal !important;
+.login .aui-header .aui-header-logo img {
+    max-height: 100%; /* AUI has 30px */
+    padding: 0; /* AUI has 5px */
 }
 
-/* long string word */
-.confluenceTd .wordBreakAll {
-    word-break: break-all;
-}
+/* End custom styles for Confluence */
 
 /* End custom styles for Confluence */
 
