@@ -729,7 +729,9 @@ label[for="search-filter-include-archived"] {
     max-height: 100%; /* AUI has 30px */
     padding: 0; /* AUI has 5px */
 }
-
+.login #header .aui-header .aui-header-logo a:hover {
+    background-color: #fff !important;
+}
 /* End custom styles for Confluence */
 
 /* End custom styles for Confluence */
