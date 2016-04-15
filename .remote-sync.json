@@ -1,10 +1,10 @@
 {
   "transport": "scp",
-  "hostname": "52.23.237.96",
+  "hostname": "104.197.3.241",
   "port": 22,
-  "username": "cliqruser",
-  "keyfile": "/Users/jasonzhai/.ssh/keys/jason",
-  "target": "/datadir/atlassian-confluence-5.6.5/confluence/",
+  "username": "appadmin_h1",
+  "keyfile": "/Users/jasonzhai/zhai.pem",
+  "target": "atlassian-confluence-5.6.5/confluence/",
   "ignore": [
     ".git/**"
   ]
