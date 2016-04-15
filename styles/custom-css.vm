@@ -929,17 +929,23 @@ vertical-align: middle;}
 	.ciscolearnmore {margin-left:0em!important;}
 	.tophatstretch{width:100%!important;padding-left:24px!important;}
 }
-body {padding-top:0px;}
+body {padding-top:42px;}
 .tophat {position:fixed; z-index:1000; margin-top:-42px;}
 #mobile-hamburger {top:52px!important;}
 #toprightnav {top:66px;}
 #request-demo-dropdown-link {top:86px;}
 
 #side-menu {
-    top: 0px !important;
+    top: 42px !important;
+}
+body.login {
+    padding-top: 0;
 }
 .login .tophat {
     margin-top: -50px;
+}
+#main-right-menu {
+    margin-top: 42px;
 }
 
 /* End custom styles for Confluence */

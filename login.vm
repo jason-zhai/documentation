@@ -224,7 +224,7 @@
 		    margin-top: -50px;
 		}
 </style>
-		<div style="width:100%; height:42px; display:none;" class="tophat"><div class="tophatstretch"><a class="cisco-logo" href="http://www.cisco.com/" target="_blank"><img src="/styles/images/tophat/cisco-logo.png"> </a><div class="content-area"><span class="cisco-message">CliQr is now part of Cisco</span> <a class="cisco-more" href="http://www.cisco.com/c/en/us/about/corporate-strategy-office/acquisitions/cliqr.html" target="_blank">Learn More <img src="/styles/images/tophat/icon-arrow.png"></a> <a class="cisco-about" href="http://www.cisco.com/web/about/index.html" target="_blank">About Cisco</a></div></div></div>
+		<div style="width:100%; height:42px;" class="tophat"><div class="tophatstretch"><a class="cisco-logo" href="http://www.cisco.com/" target="_blank"><img src="/styles/images/tophat/cisco-logo.png"> </a><div class="content-area"><span class="cisco-message">CliQr is now part of Cisco</span> <a class="cisco-more" href="http://www.cisco.com/c/en/us/about/corporate-strategy-office/acquisitions/cliqr.html" target="_blank">Learn More <img src="/styles/images/tophat/icon-arrow.png"></a> <a class="cisco-about" href="http://www.cisco.com/web/about/index.html" target="_blank">About Cisco</a></div></div></div>
         <content tag="bodyClass">login</content>
 		#if($showSignup)
 		#requireResource("confluence.web.resources:signup")
