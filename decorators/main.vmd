@@ -238,7 +238,7 @@
 
                                  #set($homeSpace = $spaceManager.getSpace("HOME"))
 
-                                 #set($latestSpace = $spaceManager.getSpace("CCD42"))
+                                 #set($latestSpace = $spaceManager.getSpace("CCD46"))
 
                                  #set($mySpaces = [$apiSpace, $cliSpace] )
 
@@ -256,8 +256,13 @@
                                                 #if(($currentSpaceKey == "FAQ") || ($currentSpaceKey == "40API") || ($currentSpaceKey == "CLI"))
                                                     <option>CloudCenter Documentation</option>
                                                 #end
-                                                <option value="http://docs.cliqr.com/display/CCD42/">Version 4.2 to 4.5</option>
-                                                <option value="http://docs.cliqr.com/display/CCD40/"
+                                                <option value="http://docs.cloudcenter.cisco.com/display/CCD46/CloudCenter+Documentation+4.6">Version 4.6</option>
+                                                <option value="http://docs.cloudcenter.cisco.com/display/CCD42/"
+                                                #if($currentSpaceKey == "CCD42")
+                                                 selected="selected"
+                                                #end
+                                                >Version 4.2 to 4.5</option>
+                                                <option value="http://docs.cloudcenter.cisco.com/display/CCD40/"
                                                 #if($currentSpaceKey == "CCD40")
                                                  selected="selected"
                                                 #end
