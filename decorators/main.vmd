@@ -256,7 +256,7 @@
                                                 #if(($currentSpaceKey == "FAQ") || ($currentSpaceKey == "40API") || ($currentSpaceKey == "CLI"))
                                                     <option>CloudCenter Documentation</option>
                                                 #end
-                                                <option value="http://docs.cloudcenter.cisco.com/display/CCD46/CloudCenter+Documentation+4.6">Version 4.6</option>
+                                                <option value="http://docs.cloudcenter.cisco.com/display/HOME/CloudCenter+Documentation">Version 4.6/4.7</option>
                                                 <option value="http://docs.cloudcenter.cisco.com/display/CCD42/"
                                                 #if($currentSpaceKey == "CCD42")
                                                  selected="selected"
