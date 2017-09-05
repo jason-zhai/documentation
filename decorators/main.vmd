@@ -31,16 +31,17 @@
       #requireResource("com.atlassian.confluence.plugins.confluence-space-ia:spacesidebar")
       #end
       #parse("/decorators/includes/header.vm")
+
       $!settingsManager.globalSettings.customHtmlSettings.beforeHeadEnd
       $!sitemeshPage.getProperty("page.canonical")
-      <link href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700,400italic,700italic" rel="stylesheet" type="text/css">
-      <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+      <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,400italic,700italic" rel="stylesheet" type="text/css">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
       <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
    </head>
    ## HTML HEADER ENDS
    ## HTML BODY BEGINS
-   <body #onLoadAttr() id="com-atlassian-confluence" class="#if ($darkFeatures.isFeatureEnabled("lighter-editor-v1")) lighter-editor #end $!theme.bodyClass $!sitemeshPage.getProperty("page.bodyClass") aui-layout aui-theme-default mobile-side-menu-open">
-   <div style="width:100%; height:42px;" class="tophat"><div class="tophatstretch"><a class="cisco-logo" href="http://www.cisco.com/" target="_blank"><img src="/styles/images/tophat/cisco-logo.png"> </a><div class="content-area"><span class="cisco-message">CliQr is now part of Cisco</span> <a class="cisco-more" href="http://www.cisco.com/c/en/us/about/corporate-strategy-office/acquisitions/cliqr.html" target="_blank">Learn More <img src="/styles/images/tophat/icon-arrow.png"></a> <a class="cisco-about" href="http://www.cisco.com/web/about/index.html" target="_blank">About Cisco</a></div></div></div>
+   <body style="padding-top:2px !important;"#onLoadAttr() id="com-atlassian-confluence" class="#if ($darkFeatures.isFeatureEnabled("lighter-editor-v1")) lighter-editor #end $!theme.bodyClass $!sitemeshPage.getProperty("page.bodyClass") aui-layout aui-theme-default mobile-side-menu-open">
    #parse ("/decorators/includes/main-content-includes.vm")
    <ul id="assistive-skip-links" class="assistive">
       <li><a href="#title-heading">$action.getText("assistive.skiplink.to.content")</a></li>
@@ -52,71 +53,6 @@
    <div id="page">
       #if((!$req.requestURL.toString().endsWith('editpage.actions')) && (!$req.requestURL.toString().endsWith('createpage.actions'))&& (!$req.requestURL.toString().endsWith('createpage-entervariables.action')))
       <!-- \#CliQr Global Side-Bar -->
-      <a id="mobile-hamburger" class="mobile-menu-toggle" href="#toggle-menu">
-         <div></div>
-         <div></div>
-         <div></div>
-      </a>
-      <div id="side-menu">
-         <div class="scroll-pane">
-            <a href="http://www.cliqr.com/" id="menu-logo" class="closed-menu-logo menu-link" target="_blank">
-            <span class="image"></span>
-            </a>
-            <nav>
-               <ul>
-                  <li class="solutions-menu-li">
-                     <a class="solutions-menu-item" href="http://www.cliqr.com/solutions/" target="_blank">
-                     <span class="menu-icon solutions"></span>
-                     <span class="menu-item-text">Solutions</span>
-                     </a>
-                  </li>
-                  <li class="platform-menu-li">
-                     <a class="platform-menu-item" href="http://www.cliqr.com/platform/" target="_blank">
-                     <span class="menu-icon platform"></span>
-                     <span class="menu-item-text">Platform</span>
-                     </a>
-                  </li>
-                  <li class="company-menu-li">
-                     <a class="company-menu-item" href="http://www.cliqr.com/company/" target="_blank">
-                     <span class="menu-icon company"></span>
-                     <span class="menu-item-text">Company</span>
-                     </a>
-                  </li>
-                  <li class="partners-menu-li">
-                     <a class="partners-menu-item" href="http://www.cliqr.com/partners/" target="_blank">
-                     <span class="menu-icon partners"></span>
-                     <span class="menu-item-text">Partners</span>
-                     </a>
-                  </li>
-                  <li class="resources-menu-li">
-                     <a class="resources-menu-item" href="http://www.cliqr.com/resources/" target="_blank">
-                     <span class="menu-icon resources"></span>
-                     <span class="menu-item-text">Resources</span>
-                     </a>
-                  </li>
-                  <li class="blog-menu-li">
-                     <a class="blog-menu-item" href="http://www.cliqr.com/blog/" target="_blank">
-                     <span class="menu-icon blog"></span>
-                     <span class="menu-item-text">Blog</span>
-                     </a>
-                  </li>
-                  <li class="careers-menu-li">
-                     <a class="careers-menu-item" href="http://www.cliqr.com/careers/" target="_blank">
-                     <span class="menu-icon careers"></span>
-                     <span class="menu-item-text">Careers</span>
-                     </a>
-                  </li>
-                  <li class="docs-menu-li">
-                     <a class="active docs-menu-item" href="/display/">
-                     <span class="menu-icon docs"></span>
-                     <span class="menu-item-text">Docs</span>
-                     </a>
-                  </li>
-               </ul>
-            </nav>
-         </div>
-      </div>
-      <!-- \#CliQr Global Side-Bar -->
       #end
       <div id="full-height-container">
          <div id="header-precursor">
@@ -126,9 +62,35 @@
             </div>
          </div>
          #parse("/decorators/includes/common-header.vm")
+<script type="text/javascript">
+//Append version dropdown
+$(window).load(function(){
+$("quick-nav-drop-down a.recently-viewed").hover(function(){
+$('a.recently-viewed span').css('color','#ffffff');
+});
+});
+
+ jQuery(document).ready(function(){
+
+if($('.aui-header-primary ul.aui-nav').length>0)
+{
+$('.aui-header-primary ul.aui-nav').prepend($('#myselect-style'));
+}
+else
+{
+//for logged out users
+($('#myselect-style')).insertAfter($('h1.aui-header-logo'));
+$('.aui-header-inner').css('display','inline');
+$('.aui-header-primary').css('float','left');
+}
+$('#title-heading').remove();
+});
+</script>
+
+
          #if($sitemeshPage.getProperty("page.tree"))
          #set($sidebarSettings = $studioSidebarHelper.getSettings($spaceKey))
-         <div id="splitter">
+         <div id="splitter" >
             <div id="splitter-sidebar">
             </div>
             <div id="splitter-content">
@@ -153,10 +115,10 @@
                   #set ($personalClass = "has-blog-sidebar")
                   #end
                   #if ($sitemeshPage.getProperty("page.show-main-container") != "false")
-                  <div class="ia-splitter">
+                  <div class="ia-splitter" style="width:100% !important; max-width:100% !important;">
                   <div id="main" class="$!personalClass aui-page-panel">
                      #if ($sitemeshPage.getProperty("page.show-main-header") != "false")
-                     <div id="main-header">
+                     <div id="main-header" style="width:0 !important;">
                         $!sitemeshPage.getProperty("page.content-navigation")
                         $!sitemeshPage.getProperty("global.dashboard-navigation")
                         <div id="title-heading" class="pagetitle with-breadcrumbs">
@@ -226,7 +188,7 @@
 
 
                         <!-- Updated by DDR-01JUL15 : START -->
-                        <div>
+
                            <div id="right-main-container">
                               <div id='main-right-menu'>
                                  #set( $currentSpaceKey = $sitemeshPage.getProperty("page.spacekey") )
@@ -238,7 +200,7 @@
 
                                  #set($homeSpace = $spaceManager.getSpace("HOME"))
 
-                                 #set($latestSpace = $spaceManager.getSpace("CCD46"))
+                                 #set($latestSpace = $spaceManager.getSpace("CCD48"))
 
                                  #set($mySpaces = [$apiSpace, $cliSpace] )
 
@@ -249,30 +211,27 @@
                                 #end
                                   #if($currentSpaceKey == "OP")
                                   #else
-                                      <ul>
-                                          <li>
-                                             <div class="select-style">
-                                              <select onchange="location = this.options[this.selectedIndex].value;">
-                                                #if(($currentSpaceKey == "FAQ") || ($currentSpaceKey == "40API") || ($currentSpaceKey == "CLI"))
-                                                    <option>CloudCenter Documentation</option>
-                                                #end
-                                                <option value="http://docs.cloudcenter.cisco.com/display/HOME/CloudCenter+Documentation">Version 4.6/4.7</option>
-                                                <option value="http://docs.cloudcenter.cisco.com/display/CCD42/"
-                                                #if($currentSpaceKey == "CCD42")
-                                                 selected="selected"
-                                                #end
-                                                >Version 4.2 to 4.5</option>
-                                                <option value="http://docs.cloudcenter.cisco.com/display/CCD40/"
-                                                #if($currentSpaceKey == "CCD40")
-                                                 selected="selected"
-                                                #end
-                                                >Version 4.0/4.1</option>
-                                                <option value="http://docs-3x.cliqr.com/">Version 3.1/3.2</option>
-                                              </select>
-                                            </div>
-                                          </li>
-                                      </ul>
-                                  #end
+                               <script type="text/javascript">
+
+/*Varsha Avoid scrolling div when right main container reaches extreme bottom or top- Kedar's suggestion*/
+jQuery(document).ready(function(){
+console.log("in function");
+ $( '#main-right-menu' ).on( 'mousewheel DOMMouseScroll', function ( e ) {
+    var e0 = e.originalEvent,
+        delta = e0.wheelDelta || -e0.detail;
+    this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+    e.preventDefault();
+});
+});
+
+
+ $(window).bind("load", function() {
+document.getElementById("headerSelection").style.display='block';
+$(".ajs-button.normal #watch-content-button span").text("Watch");
+console.log("Watch Content changed");
+});
+</script>
+                                                                   #end
 
                                  #foreach( $page in $s.getHomePage().getSortedChildren() )
                                  <ul>
@@ -354,9 +313,9 @@
                                     #else
                                       #if ($s.getName().indexOf(".") > 0 )
                                       #set($index = $s.getName().indexOf(".")+1)
-                                      <li class='has-sub top'><a href=$s.getHomePage().getUrlPath()><span>$s.getName().substring($index)</span></a>
+                                      <li id=$s.getName().substring($index) class='has-sub top'><a href=$s.getHomePage().getUrlPath()><span>$s.getName().substring($index)</span></a>
                                          #else
-                                      <li class='has-sub top'>
+                                      <li  id=$s.getName() class='has-sub top'>
                                          <a href=$s.getHomePage().getUrlPath()><span>$s.getName()</span></a>
                                          #end
                                     #end
@@ -407,7 +366,7 @@
                                  #end
                               </div>
                            </div>
-                        </div>
+
                         <!-- Updated by DDR-01JUL15 : END -->
                         $!sitemeshPage.getProperty("page.tab-navigation")
                         #if(($req.requestURL.toString().contains('/display/')) || ($req.requestURL.toString().endsWith('viewpage.action')))
@@ -502,6 +461,35 @@
       <!-- \#full-height-container -->
    </div>
    <!-- \#page -->
+<!--This ul is written by Varsha for moving right container dropdown to the header-->
+     <ul style="display:none" >
+                                          <li id="myselect-style" class="dpdwn"  style="list-style:none;display:inline; width:60%;" >
+                                             <div class="myselect" id="headerSelection" style="width:60%;text-transform:capitalize;font-size:20px;font-family:Lato;">CloudCenter Documentation
+                                              <select id="mySelection" style="font-size:20px;font-family:Lato;" onchange="location = this.options[this.selectedIndex].value; ">
+<option value="http://docs.cloudcenter.cisco.com/display/CCD48"
+ selected="selected"
+>v4.8</option>
+                                                <option value="http://docs.cloudcenter.cisco.com/display/CCD46/"
+                                                #if($currentSpaceKey == "CCD46")
+                                                 selected="selected"
+                                                #end
+                                                >v4.6/4.7</option>
+                                                <option value="http://docs.cloudcenter.cisco.com/display/CCD42/"
+                                                #if($currentSpaceKey == "CCD42")
+                                                 selected="selected"
+                                                #end
+                                                >v4.2 to 4.5</option>
+<option value="http://docs.cloudcenter.cisco.com/display/40API/"
+                                                #if($currentSpaceKey == "40API")
+                                                 selected="selected"
+                                                #end
+                                                >API</option>
+                                              </select>
+                                            </div>
+                                          </li>
+                                      </ul>
+
+
    <ul>
        <li class="dpdwn" id="append_menu" style="display:none;">
           <a href="#"><span>Spaces</span></a>
@@ -535,6 +523,12 @@
 #if (!$user)
 <script>
    $(document).ready(function(){
+
+$(".aui-header-primary").css("width",'70%');
+$("#myselect-style").css("width",'90%');
+$(".myselect").css("padding-top",'5px');
+
+
    $("#action-menu-modify").remove();
    $("#action-menu-primary").remove();
    $("#view-page-info-link").parent().remove();
@@ -550,6 +544,75 @@
 var ww = document.body.clientWidth;
 
 jQuery(document).ready(function() {
+
+//Added by Varsha to Remove share option
+$("#shareContentLink").parent().remove();
+
+
+//Added by Varsha for removing the search tool bar from landing page
+$(".confluence-searchbox.adaptavist-searchbox.marginlessForm").parent().parent().remove();
+
+
+//Added by Varsha to replace FAB icons by glyphicons. Also involved code to remove underline
+
+$("#page-favourite").remove();
+
+
+$("#editPageLink").removeClass();
+$("#editPageLink").addClass("glyphicon glyphicon-pencil");
+$("#editPageLink").css("text-decoration","none");
+$("#editPageLink").css("display","-webkit-box");
+$("#editPageLink").parent().css("width","auto");
+$("#editPageLink").parent().css("height","inherit");
+$("#editPageLink span").text("Edit");
+$("#editPageLink").css("padding","3px");
+
+
+
+$("#watch-content-button").removeClass();
+$(".ajs-button.normal #watch-content-button span").remove();
+$(".ajs-button.normal #watch-content-button").prepend("<span></span>");
+$(".ajs-button.normal #watch-content-button span").text("Watch");
+
+$("#watch-content-button").addClass("glyphicon glyphicon-eye-open");
+$("#watch-content-button").css("text-decoration","none");
+$("#watch-content-button").css("display","-webkit-box");
+$("#watch-content-button").parent().css("width","auto");
+$("#watch-content-button").parent().css("height","inherit");
+$("#watch-content-button").css("padding","3px");
+$("#watch-content-button span").attr("style","padding-left: 14px !important");
+
+
+$("#action-menu-link").removeClass();
+$("#action-menu-link").addClass("aui-dropdown2-trigger glyphicon glyphicon-cog");
+$("#action-menu-link").css("text-decoration","none");
+$("#action-menu-link").css("display","-webkit-box");
+$("#action-menu-link").parent().css("width","auto");
+$("#action-menu-link span").text("Tools");
+$("#action-menu-link").css("padding","3px");
+//$("#action-menu-link span").css("padding-left","5px");
+$("#action-menu-link span").css("font-family","sans-serif");
+
+
+//end of glyphicons
+
+
+//Added by Varsha for changing the settings icon
+$(".aui-nav-link.aui-dropdown2-trigger").prepend("<span class='aui-icon aui-icon-small aui-iconfont-confluence'/>");
+$("span.aui-icon.aui-icon-small.aui-iconfont-configure").remove();
+$(".aui-avatar-inner").prepend("<span class='glyphicon glyphicon-user'></span>")
+$(".aui-avatar-inner img").remove();
+
+//Added by Varsha for selective version display of CLI
+
+var myselect=document.getElementById("mySelection");
+var selectedText=myselect.options[myselect.selectedIndex].text;
+if(selectedText=="v4.8" || selectedText=="v4.6/4.7")
+{
+//Hide the CLI
+$("#CLI").hide();
+console.log("Cli hidden");
+}
     var hideMenu = $('#search-results-header').length +
                    $('#space-directory').length +
                    $('.space-operations').length +
@@ -560,7 +623,55 @@ jQuery(document).ready(function() {
     if(hideMenu > 0) {
       $('#right-main-container').hide();
     }
-    $( ".search-results" ).append( "<a href='display/ABOUT/About+Home ' class='home-back-btn'>Back To Home</a>" );
+
+
+
+
+
+//Varsha Make search space oriented as per Kedars suggestion
+$('#quick-search').submit(function(eventObj) {
+
+if("$currentSpaceKey"){
+var val="$currentSpaceKey";
+console.log("the current space key is "+val);
+
+//check if the URL contains "where parameter"
+ var results = new RegExp('[\?&]' + "where" + '=([^&#]*)').exec(window.location.href);
+  if(results!=null){
+       val=decodeURI(results[1]) || 0;
+       console.log("Inside the URL check function "+val);
+    }
+
+console.log("outside check "+val);
+
+if(val=="HOME")
+val="CCD48";
+    $(this).append('<input type="hidden" name="where" value="'+val+'" /> ');
+    return true;
+	}
+});
+
+
+$(".pagination-container").append("<a href='display ' class='home-back-btn'>Back To Home</a>" );
+
+//$( ".search-results" ).append( "<a href='display ' class='home-back-btn'>Back To Home</a>" );
+
+
+/*This is the page to append search component by Varsha*/
+$("div.aui-page-panel-inner").prepend($("#search-form"));
+$("#search-results-header").remove();
+$("div.aui-page-panel-inner").css("margin","auto");
+$("div.aui-page-panel-inner").css("margin-top","25px");
+$("div.aui-page-panel-inner").css("background-color","#f8f8f8");
+$("div.aui-page-panel-inner").css("font-style","Lato");
+
+
+$("div.aui-page-panel-inner").css("width","60%");
+$("div.aui-page-panel-inner").css("padding","20px 20px 20px 20px");
+
+
+
+
 
     /* First Level Active Menu Open*/
     //Active parent menu down arrow
@@ -583,8 +694,6 @@ jQuery(document).ready(function() {
         var top_h = (topbar_h + menu_h)+50;
         var left_height = document_h - top_h;
         var leftmenu_height = window_h - top_h;
-
-
         $("#accmenu").css("height",left_height);
 
 
@@ -728,6 +837,11 @@ var adjustMenu = function() {
               if($('#login-link').length>0){
                      $('#navigation').css('display','none');
                      $('#main').css('padding-top','0px');
+//changed by Varsha for the login appearing on the home page
+$("#login-link").empty();
+$("#login-link").addClass("glyphicon glyphicon-user");
+$("#login-link").css("color","#ffffff");
+
               }
 
               $('#main-right-menu li.has-sub>a').on('click', function(e){
@@ -863,6 +977,18 @@ var adjustMenu = function() {
               $(this).val($(this).find('option[selected]').val());
            });
 
+
+//Added by Varsha for getting current element and finding its offset from top
+$(window).bind("load", function() {
+var mycurrent=$("li a.current");
+var divright=$("#main-right-menu");
+if(mycurrent.length>0)
+{
+$('#main-right-menu').animate({
+   scrollTop: mycurrent.offset().top-divright.offset().top},
+   1);
+}
+});
     } )( jQuery );
    /******** Accordion Script added by DDR for Side According Menu  END******/
 </script>
@@ -870,26 +996,113 @@ var adjustMenu = function() {
    jQuery(".has-sub").parent().css("list-style","none");
 </script>
 <script>
-   /* $( "#mobile-hamburger" ).toggle(
-   function() {
-       jQuery("#side-menu").css("width", "0px");
-   jQuery(this).css("left", "0px");
-    },
-   function() {
-      jQuery("#side-menu").css("width", "400px");
-   jQuery(this).css("left", "400px");
-    }
-   );*/
+
    jQuery(document).ready(function() {
    $(".scroll").resizable();
    });
 </script>
 <script type="text/javascript">
-   var append_menu = $('#append_menu').html();
-   $(".aui-header-primary ul.aui-nav").prepend("<li class='dpdwn'>"+append_menu+"</li>");
+//Append spaces
+var append_menu = $('#append_menu').html();
+ $(".aui-header-primary ul.aui-nav").prepend("<li class='dpdwn'>"+append_menu+"</li>");
+
+//Append version dropdown
+ jQuery(document).ready(function(){
+ //By Jason $(".aui-header-primary").prepend("<ul class='aui-nav'><li class='dpdwn'>"+myselect+"</li></ul>");
+ $('.aui-header-primary ul.aui-nav').prepend($('#myselect-style'));
+
+console.log("The height of aui header primary is "+$('.aui-header-primary').height());
+if($('.aui-header-primary').height()<=0)
+{
+console.log("No aui header present!!!:(");
+($('#myselect-style')).insertAfter($('h1.aui-header-logo'));
+//Set the css of header o that both primary and secondary headers are inline
+$('.aui-header-inner').css('display','inline');
+$('.aui-header-primary').css('float','left');
+
+}
+
+});
 </script>
 <script type="text/javascript">
    $( ".login-section:contains('Log in')" ).css( "margin-left", "70px" );
+
+/*get space from the url and select index for the verison dropdown menu*/
+ $(window).bind("load", function() {
+
+//By Varsha for customizing search Page
+if($("div.search-results-page-panel-nav").length>0){
+/*This is where we place search css results*/
+/*Step 1: remove all unwanted fields */
+$("#s2id_cql-field-contributor-0").hide();
+$(".cql-filter-field-input-container span").hide();
+$(".cql-filter.cql-field-lastmodified.cql-type-date").hide();
+$(".cql-filter.cql-field-type.cql-type-contentType").hide();
+$(".cql-add-filter-container").hide();
+
+/*Step 2 Position AUI page panel Inner*/
+$("div.aui-page-panel-inner").css("position","absolute");
+$("div.aui-page-panel-inner").css("margin-top","60px");
+$(".aui-page-panel").css("border","none");
+$(".aui-page-panel-inner").css("background-color","#ffffff");
+$(".aui-page-panel-inner").css("width","1200px");
+$(".aui-page-panel-inner").css("font-family","Lato");
+
+
+/*Step 3 position the version and search input box inline*/
+$("#search-query-submit-button").attr("style","border:1px solid #c6c7ca !important");
+$(".loading-spinner.button-spinner").hide();
+$(".search-results-page-panel-nav").css("padding-top","44px");
+$("#search-form").css("width","50%");
+$("#search-form").css("float","left");
+
+/*Customize css of elements*/
+$("#search-form h1").css("font-weight","300");
+$("#search-query-submit-button").css("position","absolute");
+$("#search-query-submit-button").css("margin-left","0");
+console.log("Removed");
+$(".aui-icon.aui-icon-small.aui-iconfont-help.help-button").remove();
+}
+else
+{
+console.log("Not Removed");
+}
+
+
+
+
+var hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    for(var i = 0; i < hashes.length; i++)
+    {
+        hash = hashes[i].split('=');
+if(hash[0]=="where")
+{
+console.log("found where");
+//Based on the where parameter,  select the corresponding option in myselect select dropdown
+var whereVal=hash[1];
+if(whereVal=="CCD48")
+{
+console.log("found 48");
+$("#mySelection").prop("selectedIndex" ,0);
+}
+else if(whereVal=="CCD46")
+{
+console.log("found 46");
+$("#mySelection").prop("selectedIndex" ,1);}
+else if(whereVal=="CCD42")
+{
+console.log("found 42");
+$("#mySelection").prop("selectedIndex" ,2);}
+break;
+}
+    }
+});
+
+
+
+
+//end of window bind onload function
 </script>
    </body>
 </html>
