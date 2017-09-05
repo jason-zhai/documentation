@@ -36,8 +36,8 @@
       $!sitemeshPage.getProperty("page.canonical")
       <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,400italic,700italic" rel="stylesheet" type="text/css">
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
-      <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+      <script src="https://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
    </head>
    ## HTML HEADER ENDS
    ## HTML BODY BEGINS
